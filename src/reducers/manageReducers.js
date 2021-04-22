@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
-// const rootReducer = combineReducers({
-//     books: bookReducer,
-//     comments: commentReducer
-// })
+const rootReducer = combineReducers({
+    books: bookReducer,
+    comments: commentReducer
+})
 
-// export default rootReducer;
+export default rootReducer;
 
 function bookReducer(state = [], action) {
     switch (action.type){
@@ -45,10 +45,19 @@ function bookReducer(state = [], action) {
     }
 }
 
-// function commentReducer(state = [], action){
-//     switch(action.type) {
-//         case 'ADD_COMMENT':
-            
-//     }
+function commentReducer(state = [], action){
+    switch(action.type) {
+        
+        case 'FETCH_COMMENT':
+            return action.comments
 
-// }
+        case 'ADD_COMMENT':
+            return state.concat(action.comment)
+
+        default:
+            return state
+
+            
+    }
+
+}
