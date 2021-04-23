@@ -7,7 +7,7 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 
-function bookReducer(state = {books: []}, action) {
+function bookReducer(state = [], action) {
     switch (action.type){
         // fetch all existing books in backend server
         case 'FETCH_BOOKS':
