@@ -9,6 +9,6 @@ export const editBook = (data) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(book => dispatch({type: 'EDIT_BOOK', payload: book}))
+        .then(book => dispatch({type: 'EDIT_BOOK', book}))
     }
 }

@@ -1,6 +1,6 @@
 const addLikesToBook = (book) => {
     return {
-      type: 'LIKE_BOOK', payload: book
+      type: 'LIKE_BOOK', book
     }
 }
 
