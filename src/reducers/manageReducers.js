@@ -11,27 +11,27 @@ function bookReducer(state = [], action) {
     switch (action.type){
         // fetch all existing books in backend server
         case 'FETCH_BOOKS':
-            return {books: action.payload}
+            return  action.books
 
         // add new book to database
         case 'ADD_BOOK':
-            return {...state, books: [...state.books, action.payload]}
+            return state.concat(action.book)
 
         // edit existing book in database
         case 'EDIT_BOOK':
-            let findBook = state.books.map(book => {
-                if (book.id === action.payload.id){
-                    return action.payload
+            let findBook = state.map(book => {
+                if (book.id === action.book.id){
+                    return action.book
                 }
                 else
                 {return book}
             })
             return {...state, books: findBook}
-
+            
 
         // add likes to a book
         case 'LIKE_BOOK':
-            return state.books.map(book => {
+            return state.map(book => {
                 if (book.id === action.book.id) {
                     return action.book
                 }

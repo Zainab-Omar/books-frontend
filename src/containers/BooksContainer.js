@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchBooks } from '../actions/fetchBooks'
-// import books from './components/books'
+import Books from '../components/books'
 
 class BooksContainer extends React.Component {
     componentDidMount(){
@@ -14,7 +14,7 @@ class BooksContainer extends React.Component {
             <div>
                 hello
             
-                {/* <Books books = {this.props.books} /> */}
+                <Books books = {this.props.books} />
             </div>
         )
     }
