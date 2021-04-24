@@ -12,8 +12,6 @@ class BooksContainer extends React.Component {
         // let books = console.log(this.props.books)
         return(
             <div>
-                hello
-            
                 <Books books = {this.props.books} />
             </div>
         )
