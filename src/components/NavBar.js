@@ -5,7 +5,7 @@ const NavBar = () => {
     return(
     <div>
         <NavLink to="/" style={link} className="navbar-link">Home</NavLink>
-        <NavLink to="/book" style={link} className="navbar-link">Books</NavLink>
+        <NavLink to="/books" style={link} className="navbar-link">Books</NavLink>
         <NavLink to="/books/new" style={link} className="navbar-link">Add Book</NavLink>
         {/* <NavLink to="/about" style={link} className="navbar-link">About</NavLink> */}
     </div>
@@ -16,7 +16,7 @@ const link = {
     padding: '15px',
     margin: '0 8px 8px',
     textDecoration: 'none',
-    color: 'white',
+    color: 'black',
   }
   
   export default NavBar;
