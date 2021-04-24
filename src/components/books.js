@@ -1,5 +1,4 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
 import Book from './book'
 
 const Books = ({books}) => {
