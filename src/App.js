@@ -4,11 +4,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import BookInput from './components/bookInput'
-// import EditBook from './components/editBook'
+// import EditBook from './components/EditBook'
 import BooksContainer from './containers/BooksContainer'
 // import Books from './components/books'
-import bookInput from './components/bookInput';
+import BookInput from './components/BookInput';
+import CommentInput from './components/CommentInput'
 
 class App extends React.Component {
 
@@ -17,7 +17,7 @@ class App extends React.Component {
       <Router>
         <div className="App">
         <NavBar />
-          {/* <Route exact path="/" component={Home} /> */}
+          <Route exact path="/" component={CommentInput} />
           {/* <Route exact path="/about" component={About} /> */}
           <Route exact path="/books" component={BooksContainer} />
           <Route exact path="/books/new" component={BookInput} />

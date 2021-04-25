@@ -1,5 +1,5 @@
 import React from 'react'
-import Book from './book'
+import Book from './Book'
 
 const Books = ({books}) => {
     const renderBooks = books.map(book => <Book key={book.id} book={book} />

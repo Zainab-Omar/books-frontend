@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchBooks } from '../actions/fetchBooks'
-import Books from '../components/books'
+import Books from '../components/Books'
 
 class BooksContainer extends React.Component {
     componentDidMount(){

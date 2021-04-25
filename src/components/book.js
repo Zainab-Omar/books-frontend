@@ -1,5 +1,5 @@
 import React from 'react'
-import editBook from './editBook'
+import EditBook from './EditBook'
 import { Link } from 'react-router-dom'
 
 // this component is to show a single book details and edit it if needed
