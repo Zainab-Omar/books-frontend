@@ -48,7 +48,7 @@ function bookReducer(state = [], action) {
 function commentReducer(state = [], action){
     switch(action.type) {
 
-        case 'FETCH_COMMENT':
+        case 'FETCH_COMMENTS':
             return action.comments
 
         case 'ADD_COMMENT':
