@@ -7,7 +7,7 @@ const addComment = comment => {
   
   export const createComment = (comment) => {
     return dispatch => {
-      fetch(`http://localhost:3000/api/v1/books/${comment.book_id}/comments/`, {
+      fetch(`http://localhost:3000/api/v1/books/${comment.book_id}/comments`, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
