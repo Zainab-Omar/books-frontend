@@ -1,6 +1,7 @@
 const addLikesToBook = (book) => {
     return {
-      type: 'LIKE_BOOK', book
+      type: 'LIKE_BOOK', 
+      book
     }
 }
 
@@ -8,7 +9,7 @@ const addLikesToBook = (book) => {
 export const likeBook = (book) => {
     const likedBook = Object.assign(book, { likes: book.likes + 1 })
     return dispatch => {
-      fetch(`http://localhost:3000/api/v1/books/${book.id}`, {
+      fetch(`http://localhost:3000/api/v1/books/${book.id}/`, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'

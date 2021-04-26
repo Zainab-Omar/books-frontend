@@ -18,15 +18,15 @@ function bookReducer(state = [], action) {
             return state.concat(action.book)
 
         // edit existing book in database
-        case 'EDIT_BOOK':
-            let findBook = state.map(book => {
-                if (book.id === action.book.id){
-                    return action.book
-                }
-                else
-                {return book}
-            })
-            return {...state, books: findBook}
+        // case 'EDIT_BOOK':
+        //     let findBook = state.map(book => {
+        //         if (book.id === action.book.id){
+        //             return action.book
+        //         }
+        //         else
+        //         {return book}
+        //     })
+        //     return {...state, books: findBook}
             
 
         // add likes to a book

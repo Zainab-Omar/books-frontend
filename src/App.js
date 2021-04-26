@@ -18,10 +18,10 @@ class App extends React.Component {
       <Router>
         <div className="App">
         <NavBar />
-          <Route exact path="/books/:bookId" component={BookShow} />
           {/* <Route exact path="/about" component={About} /> */}
           <Route exact path="/books" component={BooksContainer} />
           <Route exact path="/add/book" component={BookInput} />
+          <Route exact path="/books/:bookId" component={BookShow} />
         </div>
       </Router>
     )

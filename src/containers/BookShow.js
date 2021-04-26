@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CommentInput from '../components/CommentInput'
 import Comments from '../components/Comments'
+import LikeButton from '../components/LikeButton'
 import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
 import { likeBook } from '../actions/likeBook'
@@ -9,7 +10,6 @@ import { likeBook } from '../actions/likeBook'
 class BookShow extends React.Component {
    
     state = {book: {}}
-   
 
     handleClick = () => {
         this.props.likeBook(this.state.book)
@@ -31,7 +31,9 @@ class BookShow extends React.Component {
             <div>
                 <img src={this.state.book.img_url} alt="picture" width="200" hieght="200" /> 
                 <h4> {this.state.book.title} </h4>
-               <Comments comments={this.props.comments} />
+               
+                <LikeButton book = {this.state.book} likeBook={this.handleClick}/>
+                <Comments comments={this.props.comments} />
                 <CommentInput bookId = {this.props.match.params.bookId} />
             </div>
         )
@@ -43,7 +45,7 @@ class BookShow extends React.Component {
 // find the book from its params to fetch comments associated with it
 
 const mapStateToProps = (state, selectedBook) => {
-    const book = state.books.find(book => book.id === selectedBook.match.params.bookId)
+    const book = state.books.find(book => book.id === +selectedBook.match.params.bookId) || {}
     return({
         book: book,
         comments: state.comments
