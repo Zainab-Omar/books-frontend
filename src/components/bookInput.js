@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addBook } from '../actions/addBook'
 
+
+
 class BookInput extends React.Component {
 
     state = {
@@ -29,6 +31,7 @@ class BookInput extends React.Component {
     }
 
     render(){
+        console.log(this.props)
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -47,6 +50,7 @@ class BookInput extends React.Component {
                     <input type="submit" />
 
                 </form>
+               
             </div>
         )
     }
