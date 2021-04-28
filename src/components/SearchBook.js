@@ -1,16 +1,27 @@
+import { render } from '@testing-library/react'
 import React from 'react'
 
 
-const SearchBook = () => {
-    return(
+class SearchBook extends React.Component {
+
+    handleSubmit = event => {
+        event.preventDefault()
+        this.props.findBook(document.getElementById("book").value)
+    }
+
+    render(){   
+      return(
         <div>
-            <form>
+            <form onSubmit={this.handleSubmit}>  
                 <label>Find Book: </label>
-                <input type="text" />
+                <input type="text" id="book"/>
                 <input type="submit" />
             </form>
         </div>
     )
+      }
 }
+
+
 
 export default SearchBook

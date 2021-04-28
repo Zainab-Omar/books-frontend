@@ -6,6 +6,9 @@ import LikeButton from '../components/LikeButton'
 import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
 import { likeBook } from '../actions/likeBook'
+import {Redirect} from 'react-router-dom'
+// import EditBook from '../components/EditBook'
+
 
 class BookShow extends React.Component {
    
@@ -31,10 +34,11 @@ class BookShow extends React.Component {
             <div>
                 <img src={this.state.book.img_url} alt="picture" width="200" hieght="200" /> 
                 <h4> {this.state.book.title} </h4>
-               
+                {/* <EditBook book = {this.state.book} /> <br /> */}
                 <LikeButton book = {this.state.book} likeBook={this.handleClick}/>
                 <Comments comments={this.props.comments} />
                 <CommentInput bookId = {this.props.match.params.bookId} />
+              
             </div>
         )
     }

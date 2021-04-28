@@ -7,8 +7,7 @@ class EditBook extends React.Component {
     state = {
         title: '',
         author: '',
-        img_url: '',
-        likes: 0
+        img_url: ''
     }
 
     handleChange = event => {

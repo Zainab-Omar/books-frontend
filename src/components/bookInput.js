@@ -27,7 +27,7 @@ class BookInput extends React.Component {
             author: '',
             img_url: ''
         })
-        
+        // this.props.history.push(`/books/${this.props.books[0].id}`)
     }
 
     render(){
@@ -50,11 +50,14 @@ class BookInput extends React.Component {
                     <input type="submit" />
 
                 </form>
-               
+                {/* {this.props.history.push(`/books/${this.props.books.slice(-1)[0].id}`)} */}
             </div>
         )
     }
 }
 
+const mapStateToProps = state => {
+    return {books: state.books}
+}
 
-export default connect(null, {addBook})(BookInput);
+export default connect(mapStateToProps, {addBook})(BookInput);
