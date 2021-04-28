@@ -1,8 +1,56 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+/* home page style */
+.home-page{
+  background-image: url(./book.jpg);
+  background-position: center;
+  background-color: #cccccc; 
+  height: 92vh;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: auto;
 }
 
-.App-logo {
+.home{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home-logo {
+  font-family: 'Century Gothic';
+  font-size: 5em;
+  font-weight: bold;
+  color: blueviolet;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.home-content{
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  padding-bottom: 30px;
+}
+
+.navbar-link {
+  font-family: 'Optima';
+  font-size:  1.2em;
+  font-weight: bold;
+}
+
+.btn-home{
+  width: 100px;
+  position: absolute;
+}
+
+
+/* navbar styling */
+
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +83,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
