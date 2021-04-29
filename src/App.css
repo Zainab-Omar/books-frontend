@@ -1,6 +1,7 @@
-/* .App {
-  text-align: center;
-} */
+.App {
+  /* text-align: center; */
+ 
+}
 
 /* home page style */
 .home-page{
@@ -57,11 +58,15 @@
   
 }
 
-.book-content{
-  /* width:250; */
-   /* height: 40vh;  */
-  
+.book-showpage{
+  margin-left: 20px;
 }
+
+.comment{
+ 
+  width: 400px; 
+}
+
 
 /* 
 .book-name{

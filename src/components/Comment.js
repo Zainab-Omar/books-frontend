@@ -2,9 +2,11 @@ import React from 'react'
 
 const Comment = ({comment}) => {
     return(
-        <div>
+        <div className="comment">
+            <hr />
+            <h4>{comment.commenter}</h4>
             <p>{comment.text}</p>
-            <p>name: {comment.commenter}</p>
+    
         </div>
     )
 }
