@@ -13,6 +13,7 @@ class SearchBook extends React.Component {
       return(
         <div>
             <form onSubmit={this.handleSubmit}>  
+                <br />
                 <label>Find Book: </label>
                 <input type="text" id="book"/>
                 <input type="submit" />

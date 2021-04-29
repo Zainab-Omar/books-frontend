@@ -32,8 +32,10 @@ class BookShow extends React.Component {
         console.log(this.state)
         return(
             <div>
-                <img src={this.state.book.img_url} alt="picture" width="200" hieght="200" /> 
-                <h4> {this.state.book.title} </h4>
+                <br />
+                <img src={this.state.book.img_url} alt="picture" width="200"  height="200" /> 
+                <h4> Title: {this.state.book.title} </h4>
+                <h4>Author: {this.state.book.author}</h4>
                 {/* <EditBook book = {this.state.book} /> <br /> */}
                 <LikeButton book = {this.state.book} likeBook={this.handleClick}/>
                 <Comments comments={this.props.comments} />

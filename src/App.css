@@ -46,6 +46,32 @@
   position: absolute;
 }
 
+.book{
+  /* float: left; */
+  padding: 15px;
+  display:inline-block;
+  height: 325 px;
+  width: 232px; 
+  /* border: 1px solid #000000; */
+  word-wrap: break-word;
+  
+}
+
+.book-content{
+  /* width:250; */
+   /* height: 40vh;  */
+  
+}
+
+/* 
+.book-name{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  color: #0c3d59;
+} */
 
 /* navbar styling */
 
