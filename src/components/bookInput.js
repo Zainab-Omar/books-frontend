@@ -27,25 +27,26 @@ class BookInput extends React.Component {
             author: '',
             img_url: ''
         })
-        // this.props.history.push(`/books/${this.props.books[0].id}`)
+        this.props.history.push('/books')
     }
 
     render(){
         console.log(this.props)
         return(
-            <div>
+            <div className="add-book">
+                <br />
                 <form onSubmit={this.handleSubmit}>
                     <label>Book Title: </label>
                     <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
-                    <br />
+                    <br /><br />
 
                     <label>Author Name: </label>
                     <input type="text" name="author" value={this.state.author} onChange={this.handleChange}/>
-                    <br />
+                    <br /><br />
 
                     <label>Book Image: </label>
                     <input type="text" name="img_url" value={this.state.img_url} onChange={this.handleChange}/>
-                    <br />
+                    <br /><br />
 
                     <input type="submit" />
 

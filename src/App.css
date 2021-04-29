@@ -63,7 +63,11 @@
 }
 
 .comment{
- 
+  width: 400px; 
+}
+
+.add-book{
+  margin-left: 20px;
   width: 400px; 
 }
 
