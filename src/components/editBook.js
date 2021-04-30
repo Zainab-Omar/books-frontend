@@ -7,7 +7,7 @@ class EditBook extends React.Component {
     state = {
         title: '',
         author: '',
-        img_url: ''
+        img_url: '',
     }
 
     handleChange = event => {
@@ -53,3 +53,4 @@ EditBook.defaultProps = {
     books: {}
 }
 export default connect(null, {editBook})(EditBook)
+

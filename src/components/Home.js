@@ -9,7 +9,7 @@ const Home = () => {
             <h2 className="home-content">You can view books like and comment on them and add books</h2>
 
             <Link to="/books">
-            <button className="btn-home">See Books</button>
+             <h2>See Books</h2>
             </Link>
             </div>
         </div>
