@@ -9,3 +9,5 @@ export function fetchBooks() {
         .catch(error => console.log(error))
     }
 }
+
+// dispatch {type: "ADD-BOOk", action}

@@ -49,7 +49,6 @@ class BookInput extends React.Component {
                     <input type="submit" />
 
                 </form>
-                {/* {this.props.history.push(`/books/${this.props.books.slice(-1)[0].id}`)} */}
             </div>
         )
     }
