@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchBooks } from '../actions/fetchBooks'
 import Books from '../components/Books'
 import SearchBook from '../components/SearchBook'
-// import SortButton from '../components/SortButton'
+
 // user can search a specific book
 
 class BooksContainer extends React.Component {
@@ -11,7 +11,7 @@ class BooksContainer extends React.Component {
     state = {
         // hold search term
         searchTerm: '',
-        sortbooks: []
+        sortbook: []
     }
 
     componentDidMount(){
@@ -26,17 +26,13 @@ class BooksContainer extends React.Component {
        })
 
        this.setState({searchTerm: newList})
-       console.log(this.state.searchTerm)
+    //    console.log(this.state.searchTerm)
 
     }
 
     sortBooks = () => {
-        // const books = console.log(this.props.books)
-        //  debugger
-        const newlist = this.props.books.sort((a,b)=> (a.title > b.title) ? 1: -1)
-        this.setState({sortbooks: newlist})
-        console.log(this.state.sortbooks)
-
+        const newList = this.props.books.sort((a,b) => a.title > b.title ? 1: -1)
+        this.setState({sortbooks: newList})
     }
 
     render(){
@@ -44,7 +40,7 @@ class BooksContainer extends React.Component {
         return(
             <div>
                 <br />
-                <button onClick={this.sortBooks}>Sort A-Z</button>
+                <button onClick={this.sortBooks}>sort A-Z</button>
                 <SearchBook findBook = {this.findBook}/> 
                 <br />
                 <Books books = {this.state.searchTerm.length > 0 ? this.state.searchTerm : this.props.books} />
