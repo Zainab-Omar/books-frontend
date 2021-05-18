@@ -1,9 +1,8 @@
-import react from 'react'
-import { Component } from 'react'
+import React, {Component} from 'react';
 import { connect } from 'react-redux'
-// import {newUserFetch} from '../actions/newUserFetch'
+import {newUserFetch} from '../actions/newUserFetch'
 
-class Signup extends Component {
+class Signup extends Component{
     state ={
         username: "",
         email: "",
@@ -24,6 +23,7 @@ class Signup extends Component {
     }
 
     render(){
+        console.log(this.props)
         return(
             <form onSubmit={this.handleSubmit}>
                 <h1>Signup</h1>
@@ -41,21 +41,23 @@ class Signup extends Component {
                 <br />
 
                 <label>avatar: </label>
-                <input type="password" name="avatar" value={this.state.avatar} onChange={this.handleChange}/>
+                <input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange}/>
                 <br />
 
                 <label>bio: </label>
                 <textarea name="bio" value={this.state.bio} onChange={this.handleChange}/>
                 <br />
 
+                <input type="submit"/>
 
             </form>
         )
     }
 }
 
-const mapDispatchToProps = dispatch => {
+
+const mapDispatchToProps = dispatch => ({
     newUserFetch: userInfo => dispatch(newUserFetch(userInfo))
-}
+  })
 
 export default connect(null, mapDispatchToProps)(Signup);

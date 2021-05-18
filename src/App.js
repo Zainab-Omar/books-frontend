@@ -7,6 +7,7 @@ import BookInput from './components/BookInput';
 import BookShow from './containers/BookShow'
 import Home from './components/Home'
 import About from './components/About'
+import Signup from './components/Signup';
 
 class App extends React.Component {
 
@@ -20,6 +21,7 @@ class App extends React.Component {
           <Route exact path="/books" component={BooksContainer} />
           <Route exact path="/add/book" component={BookInput} />
           <Route exact path="/books/:bookId" component={BookShow} />
+          <Route exact path="/signup" component={Signup} />
         </div>
       </Router>
     )
