@@ -10,9 +10,9 @@ export const newUserFetch = user => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.message){}
+            if(data.error){}
             else {
-                localStorage.setItem("token", data.token)
+                localStorage.setItem("token", data.jwt)
                 dispatch(loginUser(data.user))
             }
         })

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
+    users: userReducer,
     books: bookReducer,
     comments: commentReducer
 })
@@ -60,4 +61,13 @@ function commentReducer(state = [], action){
             
     }
 
+}
+
+function userReducer(state = [], action) {
+    switch (action.type) {
+        case 'LOGIN_USER':
+          return {...state, currentUser: action.userObj}
+        default:
+          return state;
+      }
 }
