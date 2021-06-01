@@ -67,6 +67,9 @@ function userReducer(state = [], action) {
     switch (action.type) {
         case 'LOGIN_USER':
           return {...state, currentUser: action.userObj}
+
+        case 'SIGNOUT_USER': 
+           return {...state, currentUser: {}}
         default:
           return state;
       }

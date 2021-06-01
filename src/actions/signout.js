@@ -1,3 +1,3 @@
 export const signout = () => ({
-    type: 'LOGOUT_USER'
+    type: 'SIGNOUT_USER'
   })
