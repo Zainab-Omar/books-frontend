@@ -38,9 +38,9 @@ class Signin extends React.Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => ({
     userSignin: userInfo => dispatch(userSignin(userInfo))
-}
+})
 
 export default connect(null, mapDispatchToProps)(Signin);
 

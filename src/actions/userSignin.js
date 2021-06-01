@@ -18,3 +18,8 @@ export const userSignin = user => {
         })
     }
 }
+
+const loginUser = userObj => ({
+    type: 'LOGIN_USER',
+    userObj
+})

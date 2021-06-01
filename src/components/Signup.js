@@ -23,7 +23,7 @@ class Signup extends Component{
     }
 
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <form onSubmit={this.handleSubmit}>
                 <h1>Signup</h1>

@@ -8,6 +8,7 @@ import BookShow from './containers/BookShow'
 import Home from './components/Home'
 import About from './components/About'
 import Signup from './components/Signup';
+import Signin from './components/Signin';
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
           <Route exact path="/add/book" component={BookInput} />
           <Route exact path="/books/:bookId" component={BookShow} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signin" component={Signin} />
         </div>
       </Router>
     )
