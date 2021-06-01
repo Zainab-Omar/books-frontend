@@ -9,8 +9,14 @@ import Home from './components/Home'
 import About from './components/About'
 import Signup from './components/Signup';
 import Signin from './components/Signin';
+import {fetchProfile} from './actions/fetchProfile'
+import {connect} from 'react-redux'
 
 class App extends React.Component {
+
+  componentDidMount = () => {
+    this.props.fetchProfile()
+  }
 
   render() {
     return (
@@ -29,6 +35,11 @@ class App extends React.Component {
     )
   }
 }
- 
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  fetchProfile: () => dispatch(fetchProfile())
+})
+
+export default connect(null, mapDispatchToProps)(App);
+
+
