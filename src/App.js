@@ -10,6 +10,7 @@ import About from './components/About'
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import {fetchProfile} from './actions/fetchProfile'
+import SignOut from './components/SignOut'
 import {connect} from 'react-redux'
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <div>
       <Router>
         <div className="App">
         <NavBar />
@@ -32,9 +34,12 @@ class App extends React.Component {
           <Route exact path="/signin" component={Signin} />
         </div>
       </Router>
+      {/* <SignOut /> */}
+      </div>
     )
   }
 }
+
 
 const mapDispatchToProps = dispatch => ({
   fetchProfile: () => dispatch(fetchProfile())
