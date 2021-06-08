@@ -18,17 +18,28 @@ class BooksContainer extends React.Component {
         this.props.fetchBooks()
     }
 
+    // findBook = (value) => {
+    //    const newList = this.props.books.filter(book => {
+    //        const lc = book.title.toLowerCase();
+    //        const valueLc = value.toLowerCase();
+    //        return lc.includes(valueLc)
+    //    })
+
+    //    this.setState({searchTerm: newList})
+  
+
+    // }
     findBook = (value) => {
-       const newList = this.props.books.filter(book => {
-           const lc = book.title.toLowerCase();
-           const valueLc = value.toLowerCase();
-           return lc.includes(valueLc)
-       })
-
-       this.setState({searchTerm: newList})
-    //    console.log(this.state.searchTerm)
-
-    }
+        const newList = this.props.books.filter(book => {
+            const lc = book.title.toLowerCase();
+            const valueLc = value.toLowerCase();
+            return lc.includes(valueLc)
+        })
+ 
+        this.setState({searchTerm: newList})
+   
+ 
+     }
 
     sortBooks = () => {
         const newList = this.props.books.sort((a,b) => a.title > b.title ? 1: -1)
