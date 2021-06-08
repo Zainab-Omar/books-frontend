@@ -15,7 +15,10 @@ class BooksContainer extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchBooks()
+        if (this.state.searchTerm.length > 0)
+         this.props.fetchBooks(this.state.searchTerm)
+         else
+         this.props.fetchBooks()
     }
 
     handleChange = event => {
@@ -27,7 +30,7 @@ class BooksContainer extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.fetchBooks(this.state.searchTerm)
-        this.setState({searchTerm: ''})
+        // this.setState({searchTerm: ''})
     }
  
     // findBook = (value) => {
@@ -60,7 +63,8 @@ class BooksContainer extends React.Component {
                     <input type="submit" />
                 </form>
                 <br />
-                <Books books = {this.state.searchTerm.length > 0 ? this.state.searchTerm : this.props.books} />
+                {/* <Books books = {this.state.searchTerm.length > 0 ? this.state.searchTerm : this.props.books} /> */}
+                <Books books = {this.props.books} />
             </div>
         )
     }
