@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {signout} from '../actions/signout'
 
+
 class SignOut extends React.Component{
 
     handleClick = event => {
@@ -13,8 +14,7 @@ class SignOut extends React.Component{
 
     render(){
         return(
-            <button onClick={this.handleClick}>SignOut
-            </button>
+          <button onClick={this.handleClick}>SignOut</button>
         )
     }
 
@@ -29,3 +29,5 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignOut)
+
+// {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}

@@ -16,7 +16,8 @@
 
 
 make my app better
-1) add user authentication
+1) add user authentication (done)
 2) add all CURD 
 3) use Bootstrap 
 4) add external API
+5) redirects 

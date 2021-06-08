@@ -13,6 +13,7 @@ import {fetchProfile} from './actions/fetchProfile'
 import SignOut from './components/SignOut'
 import {connect} from 'react-redux'
 
+
 class App extends React.Component {
 
   componentDidMount = () => {
@@ -32,9 +33,10 @@ class App extends React.Component {
           <Route exact path="/books/:bookId" component={BookShow} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={Signin} />
+          {/* <Route exact path="/signout" component={SignOut} /> */}
         </div>
       </Router>
-      {/* <SignOut /> */}
+      <SignOut />
       </div>
     )
   }
@@ -47,4 +49,4 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(null, mapDispatchToProps)(App);
 
-
+// {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
