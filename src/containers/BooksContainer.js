@@ -4,10 +4,7 @@ import { fetchBooks } from '../actions/fetchBooks'
 import Books from '../components/Books'
 import SearchBook from '../components/SearchBook'
 
-// user can search a specific book
-
 class BooksContainer extends React.Component {
-
     state = {
         // hold search term
         searchTerm: '',
@@ -30,7 +27,7 @@ class BooksContainer extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.fetchBooks(this.state.searchTerm)
-        // this.setState({searchTerm: ''})
+        //this.setState({searchTerm: ''})
     }
  
     // findBook = (value) => {
@@ -45,13 +42,18 @@ class BooksContainer extends React.Component {
  
     //  }
 
+    // findBook = value => {
+    //     this.setState({searchTerm: value})
+    //     this.props.fetchBooks(this.state.searchTerm)
+    // }
+
     // sortBooks = () => {
     //     const newList = this.props.books.sort((a,b) => a.title > b.title ? 1: -1)
     //     this.setState({sortbooks: newList})
     // }
 
     render(){
-    //    console.log(this.props.books)
+       console.log(this.props.books)
         return(
             <div>
                 <br />
@@ -75,7 +77,5 @@ const mapStateToProps = state => {
         books: state.books
     }
 }
-
-
 
 export default connect(mapStateToProps, {fetchBooks})(BooksContainer)
