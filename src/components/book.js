@@ -1,18 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Book = ({book}) => {
-
+      const authors = book.volumeInfo.authors || []
     return(
-        <div className="book"> 
-        <div className="book-content"> 
-            <img src={book.img_url} width="200" height="200" alt="book picture" />
-            <h5 className="book-name"><Link key={book.id} to={`/books/${book.id}`}>Book Title: {book.title}<br /> Book Author: {book.author}</Link></h5>
-        </div>
-        </div>
+         <div>
+            <img src={book.volumeInfo.imageLinks === undefined ? "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" : `${book.volumeInfo.imageLinks.thumbnail}`} width="200" height="200" alt="book image" />
+            <p>Title: {book.volumeInfo.title}</p>
+            <p>Authors: {authors.map(auther => auther)}</p>
+            <p>publishedDate: {book.volumeInfo.publishedDate}</p>
+            <a href= {book.saleInfo.buyLink === undefined ? `${book.volumeInfo.infoLink}` : `${book.saleInfo.buyLink}`} target="_blank">Buy Link</a>
+         </div>
         
     )
 
 }
 
 export default Book
+

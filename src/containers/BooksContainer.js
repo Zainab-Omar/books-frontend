@@ -27,7 +27,7 @@ class BooksContainer extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.fetchBooks(this.state.searchTerm)
-        //this.setState({searchTerm: ''})
+        this.setState({searchTerm: ''})
     }
  
     // findBook = (value) => {
