@@ -17,6 +17,7 @@ class Signin extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.userSignin(this.state)
+        // this.props.history.push('/books')
     }
 
     render(){

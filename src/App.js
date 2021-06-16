@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import BooksContainer from './containers/BooksContainer'
 import BookInput from './components/BookInput';
@@ -12,6 +12,7 @@ import Signin from './components/Signin';
 import {fetchProfile} from './actions/fetchProfile'
 import SignOut from './components/SignOut'
 import {connect} from 'react-redux'
+import Profile from './components/Profile'
 
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
     return (
       <div>
       <Router>
+        <Switch>
         <div className="App">
         <NavBar />
           <Route exact path="/" component={Home} />
@@ -33,8 +35,10 @@ class App extends React.Component {
           <Route exact path="/books/:bookId" component={BookShow} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={Signin} />
+          <Route exact path="/profile" component={Profile} />
           {/* <Route exact path="/signout" component={SignOut} /> */}
         </div>
+        </Switch>
       </Router>
       <SignOut />
       </div>
