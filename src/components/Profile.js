@@ -2,6 +2,10 @@ import React from "react"
 import {connect} from 'react-redux';
 
 const Profile = ({users})  => {
+    // console.log(users)
+    if (users === undefined){
+        return (null)
+    }
     return(
         <div>
        <img src={users.avatar} alt="picture" width="200"  height="200" />  

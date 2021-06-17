@@ -52,5 +52,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(App);
-
-// {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
