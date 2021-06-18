@@ -9,6 +9,7 @@ class SaveBook extends React.Component {
     authors: this.props.book.volumeInfo.authors, 
     publishedDate: this.props.book.volumeInfo.publishedDate, 
     buyLink: this.props.book.saleInfo.buyLink, 
+    img_url: this.props.book.volumeInfo.imageLinks,
     user_id: this.props.users.id}}
     
     handleClick = () => {
