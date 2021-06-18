@@ -17,6 +17,7 @@ function bookReducer(state = [], action) {
         // add new book to database
         case 'ADD_BOOK':
             return state.concat(action.book)
+            // return state.concat(action.book)
 
         // edit existing book in database
         // case 'EDIT_BOOK':
