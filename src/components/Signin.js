@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {userSignin} from '../actions/userSignin'
+// import { Redirect } from "react-router";
 
 class Signin extends React.Component {
     state = {
@@ -17,7 +18,7 @@ class Signin extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.userSignin(this.state)
-        // this.props.history.push('/books')
+        // this.props.history.push("/profile")
     }
 
     render(){

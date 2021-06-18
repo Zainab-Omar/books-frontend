@@ -10,6 +10,7 @@ const Book = ({book}) => {
             <p>Authors: {authors.map(auther => auther)}</p>
             <p>publishedDate: {book.volumeInfo.publishedDate}</p>
             <a href= {book.saleInfo.buyLink === undefined ? `${book.volumeInfo.infoLink}` : `${book.saleInfo.buyLink}`} target="_blank">Buy Link</a>
+            <button>Save for later</button>
          </div>
         
     )

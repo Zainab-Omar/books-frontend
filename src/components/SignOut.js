@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import {signout} from '../actions/signout'
-
+// import { Redirect } from "react-router";
 
 class SignOut extends React.Component{
 
@@ -9,6 +9,7 @@ class SignOut extends React.Component{
         event.preventDefault()
         localStorage.removeItem("token")
         this.props.signout()
+        // {<Redirect to="/signin" />}
 
     }
 
@@ -17,6 +18,7 @@ class SignOut extends React.Component{
           <button onClick={this.handleClick}>SignOut</button>
         )
     }
+   
 
 }
 
@@ -30,4 +32,3 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignOut)
 
-// {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}

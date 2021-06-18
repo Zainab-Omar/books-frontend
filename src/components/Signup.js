@@ -20,6 +20,7 @@ class Signup extends Component{
     handleSubmit = event => {
         event.preventDefault()
         this.props.newUserFetch(this.state)
+        this.props.history.push('/profile')
     }
 
     render(){
