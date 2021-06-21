@@ -21,6 +21,7 @@ const Profile = ({users})  => {
                           <p>Authors: {book.authors.map(auther => auther)}</p>
                           <p>published Date: {book.published_date}</p>
                           <a href= {book.buy_link} target="_blank">Buy Link</a>
+                          <button>delete</button>
                         </div>
                     
                 )})}
