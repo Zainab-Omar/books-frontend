@@ -11,6 +11,20 @@ const Profile = ({users})  => {
                <img src={users.avatar} alt="picture" width="200"  height="200" />  
                 <h1>Welcome {users.username}</h1>
                 <p>bio: {users.bio}</p>
+                <h3>your saved Books :</h3>
+                
+                {users.books.map(book => {
+                    return(
+                        <div>
+                          <img src={book.img_url} width="200" height="200" alt="book image" />
+                          <p>Title: {book.title}</p>
+                          <p>Authors: {book.authors.map(auther => auther)}</p>
+                          <p>published Date: {book.published_date}</p>
+                          <a href= {book.buy_link}>Buy Link</a>
+                        </div>
+                    
+                )})}
+
                 </div>
             )
         }
@@ -26,3 +40,6 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Profile);
+
+
+

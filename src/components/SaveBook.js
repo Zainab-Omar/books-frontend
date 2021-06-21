@@ -12,6 +12,8 @@ class SaveBook extends React.Component {
     img_url: this.props.book.volumeInfo.imageLinks=== undefined ? "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" : this.props.book.volumeInfo.imageLinks.thumbnail,
     user_id: this.props.users.id}}
 
+    // {book.saleInfo.buyLink === undefined ? `${this.props.book.volumeInfo.infoLink}` : `${this.props.book.saleInfo.buyLink}`} 
+
     // book.volumeInfo.imageLinks === undefined ? "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" : `${book.volumeInfo.imageLinks.thumbnail}`} 
     
     handleClick = () => {
