@@ -11,8 +11,8 @@ const Book = ({book, users}) => {
             <p>Authors: {authors.map(auther => auther)}</p>
             <p>publishedDate: {book.volumeInfo.publishedDate}</p>
             <a href= {book.saleInfo.buyLink === undefined ? `${book.volumeInfo.infoLink}` : `${book.saleInfo.buyLink}`} target="_blank">Buy Link</a>
-            {users !== undefined ?  <SaveBook book={book} /> : null} 
-            {/* <SaveBook book={book} /> */}
+            {users !== undefined ?  <SaveBook book={book} user = {users.id} /> : null} 
+           
          </div>
         
     )
@@ -27,5 +27,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(Book)
 
-// export default Book
+
 
