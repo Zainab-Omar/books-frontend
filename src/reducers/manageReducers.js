@@ -15,8 +15,8 @@ function bookReducer(state = [], action) {
             return  action.books
 
         // add new book to database
-        case 'ADD_BOOK':
-            return state.concat(action.book)
+        // case 'ADD_BOOK':
+        //     return state.concat(action.book)
             // return state.concat(action.book)
 
         // edit existing book in database
@@ -71,6 +71,10 @@ function userReducer(state = [], action) {
 
         case 'SIGNOUT_USER': 
            return {...state, currentUser: {}}
+
+        case 'ADD_BOOK':
+            return state.currentUser.books.concat(action.book)
+
         default:
           return state;
       }
