@@ -74,6 +74,9 @@ function userReducer(state = [], action) {
 
         case 'ADD_BOOK':
             return state.currentUser.books.concat(action.book)
+        
+        case 'DELETE_BOOK':
+            return state.currentUser.books.filter(book => book.id !== action.book.id)
 
         default:
           return state;
