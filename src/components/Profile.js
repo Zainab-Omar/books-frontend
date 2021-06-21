@@ -20,7 +20,7 @@ const Profile = ({users})  => {
                           <p>Title: {book.title}</p>
                           <p>Authors: {book.authors.map(auther => auther)}</p>
                           <p>published Date: {book.published_date}</p>
-                          <a href= {book.buy_link}>Buy Link</a>
+                          <a href= {book.buy_link} target="_blank">Buy Link</a>
                         </div>
                     
                 )})}
