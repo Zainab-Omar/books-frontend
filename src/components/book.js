@@ -1,6 +1,7 @@
 import React from 'react'
 import SaveBook from './SaveBook'
 import {connect} from 'react-redux';
+import { Redirect } from "react-router";
 
 const Book = ({book, users}) => {
       const authors = book.volumeInfo.authors || []
@@ -11,6 +12,7 @@ const Book = ({book, users}) => {
             <p>Authors: {authors.map(auther => auther)}</p>
             <p>publishedDate: {book.volumeInfo.publishedDate}</p>
             <a href= {book.saleInfo.buyLink === undefined ? `${book.volumeInfo.infoLink}` : `${book.saleInfo.buyLink}`} target="_blank">Buy Link</a>
+            
             {users !== undefined ?  <SaveBook book={book} user = {users.id} /> : null} 
            
          </div>
@@ -27,5 +29,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(Book)
 
-
+// export default Book
 

@@ -68,15 +68,24 @@ function userReducer(state = [], action) {
     switch (action.type) {
         case 'LOGIN_USER':
           return {...state, currentUser: action.userObj}
+        
 
         case 'SIGNOUT_USER': 
            return {...state, currentUser: {}}
 
         case 'ADD_BOOK':
-            return state.currentUser.books.concat(action.book)
+            return {
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    books: state.currentUser.books.concat(action.book)
+                }
+            }
+          
         
         case 'DELETE_BOOK':
-            return state.currentUser.books.filter(book => book.id !== action.book.id)
+            return state.currentUser.books
+            // .filter(book => book.id !== action.book.id)
 
         default:
           return state;

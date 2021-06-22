@@ -1,8 +1,9 @@
 import React from "react"
 import {connect} from 'react-redux';
 import { Redirect } from "react-router";
+import {deleteBook} from '../actions/deleteBook'
 
-const Profile = ({users})  => {
+const Profile = ({users, deleteBook})  => {
 
     if(localStorage.token !== undefined){
         if (users !== undefined){
@@ -21,7 +22,7 @@ const Profile = ({users})  => {
                           <p>Authors: {book.authors.map(auther => auther)}</p>
                           <p>published Date: {book.published_date}</p>
                           <a href= {book.buy_link} target="_blank">Buy Link</a>
-                          <button>delete</button>
+                          <button onClick = {() => deleteBook(book)}>delete</button>
                         </div>
                     
                 )})}
@@ -40,7 +41,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, { deleteBook })(Profile);
 
 
 
