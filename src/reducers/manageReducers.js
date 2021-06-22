@@ -84,8 +84,13 @@ function userReducer(state = [], action) {
           
         
         case 'DELETE_BOOK':
-            return state.currentUser.books
-            // .filter(book => book.id !== action.book.id)
+            return {
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    books: state.currentUser.books.filter(book => book.id !== action.book.id)
+                }
+            }
 
         default:
           return state;
