@@ -8,7 +8,8 @@ class Signin extends React.Component {
         email: '',
         password: ''
     }
-
+   
+  
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -18,7 +19,13 @@ class Signin extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.userSignin(this.state)
-        // this.props.history.push("/profile")
+   
+        // console.log(this.props.jwt)
+        this.props.history.push("./books")
+        
+        
+        // console.log(localStorage.token)
+        // this.props.history.push("./books")
     }
 
     render(){

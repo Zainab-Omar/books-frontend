@@ -1,3 +1,5 @@
+
+import Signin from '../components/Signin'
 export const userSignin = user => {
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/auth", {
@@ -12,7 +14,7 @@ export const userSignin = user => {
         .then(data => {
             if(data.error){}
             else {
-                localStorage.setItem("token", data.jwt)
+               localStorage.setItem("token", data.jwt)  
                 dispatch(loginUser(data.user))
             }
         })

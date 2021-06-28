@@ -1,16 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import {signout} from '../actions/signout'
-// import { Redirect } from "react-router";
+import { Redirect } from "react-router";
 
 class SignOut extends React.Component{
 
     handleClick = event => {
         event.preventDefault()
+        console.log(this.props)
         localStorage.removeItem("token")
         this.props.signout()
-        // {<Redirect to="/signin" />}
-
     }
 
     render(){
