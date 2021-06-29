@@ -2,12 +2,13 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
+import SignOut from './SignOut'
 
 const NavBar = () => {
     return(
     <div className="navbar-component" style={{ background: 'maroon', paddingTop: '12px', paddingBottom: '5px' }}>
            
-    <NavLink to="/" className="navbar-logo">
+    <NavLink to="/" className="navbar-logo" >
         Zbooks
     </NavLink>
 
@@ -23,7 +24,8 @@ const NavBar = () => {
        <Dropdown.Item eventKey="profile"><NavLink to="/profile" style={link} className="navbar-link">profile</NavLink></Dropdown.Item> 
        <Dropdown.Item eventKey="signup"><NavLink to="/signup" style={link} className="navbar-link">Signup</NavLink></Dropdown.Item> 
        <Dropdown.Item eventKey="signin"><NavLink to="/signin" style={link} className="navbar-link">Signin</NavLink></Dropdown.Item> 
-       <Dropdown.Item eventKey="signout"><NavLink to="/signout" style={link} className="navbar-link">Signout</NavLink></Dropdown.Item> 
+       {/* <Dropdown.Item eventKey="signout"><NavLink to="/signout" style={link} className="navbar-link">Signout</NavLink></Dropdown.Item>  */}
+       <Dropdown.Item eventKey="signout"><SignOut /></Dropdown.Item> 
     </DropdownButton>
     </div>
     )

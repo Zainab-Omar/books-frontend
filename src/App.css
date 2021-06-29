@@ -165,7 +165,7 @@
 
 .navbar-link {
   font-family: 'cursive';
-  font-size:  1.7em;
+  font-size:  1.5em;
   font-weight: bold;
 }
 
@@ -180,5 +180,19 @@
   text-align: center;
   color: black;
   font-weight: bold;
+}
+
+.signout-button{
+  border: none;
+  font-weight: bold;
+  font-family: 'cursive';
+  color:black;
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: white;
+  text-align: center;
+  margin-left: 18px;
+
 }
 
