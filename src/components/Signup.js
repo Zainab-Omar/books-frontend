@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import {newUserFetch} from '../actions/newUserFetch'
+import { FormControl, FormGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 class Signup extends Component{
     state ={
@@ -24,34 +26,39 @@ class Signup extends Component{
     }
 
     render(){
-        // console.log(this.props)
+
         return(
+            <div className="signup-form">
             <form onSubmit={this.handleSubmit}>
-                <h1>Signup</h1>
+                <h1>Signup !</h1>
+
+                <FormGroup>
 
                 <label>username: </label>
-                <input type="text" name="username" value={this.state.username} onChange={this.handleChange}/>
-                <br />
+                <FormControl input type="text" name="username" value={this.state.username} onChange={this.handleChange}/>
 
                 <label>email: </label>
-                <input type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
-                <br />
+                <FormControl input type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
 
                 <label>password: </label>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
-                <br />
+                <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
 
                 <label>avatar: </label>
-                <input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange}/>
-                <br />
+                <FormControl input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange}/>
+              
 
                 <label>bio: </label>
-                <textarea name="bio" value={this.state.bio} onChange={this.handleChange}/>
-                <br />
+                <FormControl textarea name="bio" value={this.state.bio} onChange={this.handleChange}/>
+                <br/>
+                <button className="btn btn-primary" type="submit">Sign Up</button>
 
-                <input type="submit"/>
+                </FormGroup>
 
+                <Link to="/signin">
+                 <p>already have account signin</p>
+                </Link>
             </form>
+        </div>
         )
     }
 }
@@ -62,3 +69,5 @@ const mapDispatchToProps = dispatch => ({
   })
 
 export default connect(null, mapDispatchToProps)(Signup);
+
+
