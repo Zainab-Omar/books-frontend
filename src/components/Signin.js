@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {userSignin} from '../actions/userSignin'
-// import { Redirect } from "react-router";
-
+import { FormControl, FormGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 class Signin extends React.Component {
     state = {
         email: '',
@@ -30,19 +30,27 @@ class Signin extends React.Component {
 
     render(){
         return(
+            <div className="signin-form">
+                <h1>Sign In !</h1>
             <form onSubmit={this.handleSubmit}>
-                <h1>Sign In form</h1>
+                <FormGroup>
 
-                <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
+                <FormControl input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
                 <br />
 
-                <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+                <FormControl input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
                 <br />
 
-                <input type="submit" />
+                <button className="btn btn-primary" type="submit">Sign In</button>
+                </FormGroup>
 
-
+             <Link to="/signup">
+             <p>Do not have account Signup</p>
+            </Link>
             </form>
+            </div>
+
+
         )
     }
 }
@@ -54,3 +62,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(Signin);
 
 
+               

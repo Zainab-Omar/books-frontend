@@ -5,7 +5,7 @@
 
 /* home page style */
 .home-page{
-  background-image: url(./book.jpg);
+  /* background-image: url(./book.jpg); */
   background-position: center;
   background-color: #cccccc; 
   height: 92vh;
@@ -141,7 +141,7 @@
   background-color: #45a049;
 }
 
-/* 
+
 .book-name{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -149,7 +149,20 @@
   overflow-wrap: break-word;
   font-weight: bold;
   color: #0c3d59;
-} */
+} 
+
+.signin-form{
+  border: 1px solid rgb(128, 128, 128);
+  text-align:left; 
+  /* background-color: rgb(127, 236, 255); */
+  width: 500px;
+  height: 500px;
+  padding: 50px;
+  margin-top: 100px;
+  margin-right: 500px;
+  margin-left: 500px;
+  margin-bottom: 100px;    
+}
 
 /* navbar styling */
 
