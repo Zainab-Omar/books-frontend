@@ -4,31 +4,34 @@
 }
 
 /* home page style */
-.home-page{
-  /* background-image: url(./book.jpg); */
-  background-position: center;
-  background-color: white; 
+.home-page{ 
   color: goldenrod;
-  height: 92vh;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: auto;
+  padding-top: 30px;
+  
 }
-
-.home{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home-title{
+  text-align: left;
+  font-style: oblique;
+  font-family: "Trattatello, fantasy";
+  font-weight: bold;
+  margin-left: 30px;
 }
 
 .home-content{
-  font-size: 2em;
-  text-align: center;
+  font-size: 1.5em;
+  text-align: left;
   color: black;
+  margin-left: 30px;
   padding-bottom: 30px;
+  font-family: "cursive"
 }
 
+.home-link{
+  font-family: "Trattatello, fantasy";
+  font-size: 1.5em;
+  margin-left: 30px;
+
+}
 
 .btn-home{
   width: 100px;
