@@ -36,11 +36,11 @@ class App extends React.Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/profile" component={Profile} />
-          {/* <Route exact path="/signout" component={SignOut} /> */}
+          <Route exact path="/signout" component={SignOut} />
+         
         </div>
         </Switch>
       </Router>
-      <SignOut />
       </div>
     )
   }

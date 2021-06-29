@@ -7,7 +7,8 @@
 .home-page{
   /* background-image: url(./book.jpg); */
   background-position: center;
-  background-color: #cccccc; 
+  background-color: white; 
+  color: goldenrod;
   height: 92vh;
   background-position: center; 
   background-repeat: no-repeat; 
@@ -21,26 +22,13 @@
   transform: translate(-50%, -50%);
 }
 
-.home-logo {
-  font-family: 'Century Gothic';
-  font-size: 5em;
-  font-weight: bold;
-  color: blueviolet;
-  margin-bottom: 25px;
-  text-align: center;
-}
 .home-content{
   font-size: 2em;
   text-align: center;
-  color: white;
+  color: black;
   padding-bottom: 30px;
 }
 
-.navbar-link {
-  font-family: 'Optima';
-  font-size:  1.2em;
-  font-weight: bold;
-}
 
 .btn-home{
   width: 100px;
@@ -165,13 +153,32 @@
 }
 
 .navbar-logo {
-  font-family: 'Century Gothic';
+  font-family: 'cursive';
+  font-style: italic;
   font-size: 2.3em;
   font-weight: bold;
+  padding: 40px;
+  margin: 0px 8px 8px;
+  color: goldenrod;
+  text-decoration: none;
 }
 
 .navbar-link {
-  font-family: 'Optima';
-  font-size:  1.2em;
+  font-family: 'cursive';
+  font-size:  1.7em;
   font-weight: bold;
 }
+
+.dropdown-button{
+  float: right;
+  margin-right: 20px;
+  margin-top: 8px;
+}
+
+#dropdown-menu-align-right{
+  background-color: maroon;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
