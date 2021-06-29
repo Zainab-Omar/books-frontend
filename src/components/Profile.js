@@ -32,7 +32,10 @@ const Profile = ({users, deleteBook})  => {
         }
         else return null
     }
-    else return <Redirect to="/" />
+    else return (
+        <Redirect to="/signin" />
+    
+    ) 
 }
 
 const mapStateToProps = state => {
