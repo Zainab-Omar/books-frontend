@@ -97,6 +97,16 @@
   margin-top: 20px;
   color: black
 }
+
+.about-section{
+  width: 600px;
+  height: 600px;
+  font-family: "Trattatello, fantasy";
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 1.5em;
+ 
+}
 /* .comment{
   width: 400px; 
 } */

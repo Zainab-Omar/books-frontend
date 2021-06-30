@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Home = () => {
     return(
         <div className="home-page">
@@ -10,6 +11,7 @@ const Home = () => {
             <Link to="/books">
              <p className="home-link">See Books</p>
             </Link>
+           
         </div>
     )
 }
