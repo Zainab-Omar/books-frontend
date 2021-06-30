@@ -30,5 +30,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(Book)
 
-// export default Book
+
 

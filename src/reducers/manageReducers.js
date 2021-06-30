@@ -10,7 +10,6 @@ export default rootReducer;
 
 function bookReducer(state = [], action) {
     switch (action.type){
-        // fetch all existing books in backend server
         case 'FETCH_BOOKS':
             return  action.books
 

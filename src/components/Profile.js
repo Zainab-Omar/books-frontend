@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { Redirect } from "react-router";
 import {deleteBook} from '../actions/deleteBook'
 
+
 const Profile = ({users, deleteBook})  => {
 
     if(localStorage.token !== undefined){
@@ -12,9 +13,10 @@ const Profile = ({users, deleteBook})  => {
                <img className="profile-photo" src={users.avatar} alt="picture" width="200"  height="200" />  
                <div className="name-bio">
                 <h3>Welcome {users.username}</h3>
-                <h3>{users.bio}</h3>
-                <h1 className="profile-title">your favorites Books :</h1>
+                <h5>{users.bio}</h5>
                 </div>
+
+                <h1 className="profile-title">your favorites Books :</h1>
                 {users.books.map(book => {
                     return(
                         <div className="user-container">
@@ -39,7 +41,8 @@ const Profile = ({users, deleteBook})  => {
         else return null
     }
     else return (
-        <Redirect to="/signin" />
+        
+            <Redirect to="/signin" />  
     
     ) 
 }

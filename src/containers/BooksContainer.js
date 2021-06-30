@@ -6,9 +6,7 @@ import SearchBook from '../components/SearchBook'
 
 class BooksContainer extends React.Component {
     state = {
-        // hold search term
         searchTerm: '',
-        // sortbook: []
     }
 
     componentDidMount(){

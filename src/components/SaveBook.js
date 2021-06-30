@@ -28,5 +28,3 @@ class SaveBook extends React.Component {
 }
 
 export default connect (null, {addBook})(SaveBook)
-
-// export default SaveBook

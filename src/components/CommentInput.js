@@ -25,7 +25,6 @@ class CommentInput extends React.Component {
     }
 
     render(){
-        // console.log(this.props)
         return(
             <div className="comment-form">
                 <h3>Add Comment</h3>

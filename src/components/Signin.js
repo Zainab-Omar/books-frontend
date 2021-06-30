@@ -3,10 +3,12 @@ import {connect} from 'react-redux'
 import {userSignin} from '../actions/userSignin'
 import { FormControl, FormGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+// import { Alert } from 'react-alert'
+
 class Signin extends React.Component {
     state = {
         email: '',
-        password: ''
+        password: '',
     }
    
   
@@ -19,17 +21,13 @@ class Signin extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.userSignin(this.state)
-   
-        // console.log(this.props.jwt)
         this.props.history.push("./books")
         
-        
-        // console.log(localStorage.token)
-        // this.props.history.push("./books")
     }
 
     render(){
         return(
+            
             <div className="signin-form">
                 <h1>Sign In !</h1>
             <form onSubmit={this.handleSubmit}>
