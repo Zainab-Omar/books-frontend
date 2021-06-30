@@ -12,7 +12,7 @@ const Profile = ({users, deleteBook})  => {
                <img className="profile-photo" src={users.avatar} alt="picture" width="200"  height="200" />  
                <div className="name-bio">
                 <h3>Welcome {users.username}</h3>
-                <h3>bio: {users.bio}</h3>
+                <h3>{users.bio}</h3>
                 <h1 className="profile-title">your favorites Books :</h1>
                 </div>
                 {users.books.map(book => {

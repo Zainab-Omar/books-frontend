@@ -9,7 +9,7 @@ class Signup extends Component{
         username: "",
         email: "",
         password: "",
-        avatar: "",
+        avatar: "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_640.png",
         bio: ""
     }
 
@@ -41,10 +41,12 @@ class Signup extends Component{
                 <FormControl input type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
 
                 <label>password: </label>
-                <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
+                <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange}/><br/>
 
-                <label>avatar: </label>
-                <FormControl input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange}/>
+                <h6 style={{color:"rgb(0 123 255)"}}>Optional</h6>
+
+                <label>Use default avatar or add yours: </label>
+                <FormControl input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange} />
               
 
                 <label>bio: </label>
