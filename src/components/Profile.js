@@ -9,20 +9,26 @@ const Profile = ({users, deleteBook})  => {
         if (users !== undefined){
             return(
                 <div>
-               <img src={users.avatar} alt="picture" width="200"  height="200" />  
-                <h1>Welcome {users.username}</h1>
-                <p>bio: {users.bio}</p>
-                <h3>your saved Books :</h3>
-                
+               <img className="profile-photo" src={users.avatar} alt="picture" width="200"  height="200" />  
+               <div className="name-bio">
+                <h3>Welcome {users.username}</h3>
+                <h3>bio: {users.bio}</h3>
+                <h1 className="profile-title">your favorites Books :</h1>
+                </div>
                 {users.books.map(book => {
                     return(
-                        <div>
-                          <img src={book.img_url} width="200" height="200" alt="book image" />
+                        <div className="user-container">
+                            <div className="user-books">
+                                <div className="user-content">
+                          <img src={book.img_url} width="300" height="400" alt="book image" />
+                          
                           <p>Title: {book.title}</p>
                           <p>Authors: {book.authors.map(auther => auther)}</p>
                           <p>published Date: {book.published_date}</p>
-                          <a href= {book.buy_link} target="_blank">Buy Link</a>
+                          <a href= {book.buy_link} target="_blank">Buy Link</a><br/>
                           <button onClick = {() => deleteBook(book)}>delete</button>
+                          </div>
+                          </div>
                         </div>
                     
                 )})}

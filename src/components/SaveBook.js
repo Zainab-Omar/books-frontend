@@ -20,7 +20,7 @@ class SaveBook extends React.Component {
     render() {
         
         return(
-            <button onClick={this.handleClick}>add</button>
+            <button onClick={this.handleClick}>add to favorites</button>
         )
     }
 

@@ -13,8 +13,8 @@ const Book = ({book, users}) => {
             <p>Authors: {authors.map(auther => auther)}</p>
             <p>publishedDate: {book.volumeInfo.publishedDate}</p>
             <a href= {book.saleInfo.buyLink === undefined ? `${book.volumeInfo.infoLink}` : `${book.saleInfo.buyLink}`} target="_blank">Buy Link</a>
-            
-            {users !== undefined ?  <SaveBook book={book} user = {users.id} /> : null} 
+            <br/>
+            {localStorage.token !== undefined ?  <SaveBook book={book} user = {users.id} /> : null} 
             </div>
          </div>
         

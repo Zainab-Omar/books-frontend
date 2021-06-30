@@ -59,9 +59,44 @@
   color: black;
   
 }
+.user-books{
+  float: left;
+  padding: 10px;
+ 
+ 
+}
+.user-container{
+  margin-left: 20px;
+}
+.user-content{
+  width: 306px;
+  height: 600px;
+  display: inline-block;
+  border: 1px groove gray;
+  text-align: center;
+  font-family: "Trattatello, fantasy";
+  color: black;
+}
 
+.profile-title{
+  font-family: "Trattatello, fantasy";
+  text-align: center;
+  color: goldenrod;
+}
 
+.profile-photo{
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-left: 20px;
+  margin-top: 20px;
+}
 
+.name-bio{
+  font-family: "Trattatello, fantasy";
+  margin-left: 20px;
+  margin-top: 20px;
+  color: goldenrod;
+}
 /* .comment{
   width: 400px; 
 } */
