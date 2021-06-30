@@ -107,6 +107,17 @@
   font-size: 1.5em;
  
 }
+.signup-alart{
+  color: red;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.signin-alart{
+  color: black;
+  margin-left: 40px;
+  margin-top: 30px;
+}
 /* .comment{
   width: 400px; 
 } */

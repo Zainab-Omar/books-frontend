@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {userSignin} from '../actions/userSignin'
 import { FormControl, FormGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-// import { Alert } from 'react-alert'
+
 
 class Signin extends React.Component {
     state = {
@@ -26,6 +26,7 @@ class Signin extends React.Component {
     }
 
     render(){
+        if (localStorage.token === undefined){
         return(
             
             <div className="signin-form">
@@ -51,6 +52,17 @@ class Signin extends React.Component {
 
         )
     }
+    else return(
+        <div className="signin-alart">
+            <h3>You already Signed in
+            <Link to="/profile">
+             <p>view your profile </p>
+            </Link>
+            </h3>
+        </div>
+    )
+    
+  }
 }
 
 const mapDispatchToProps = dispatch => ({

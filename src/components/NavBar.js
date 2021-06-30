@@ -22,8 +22,8 @@ const NavBar = () => {
       id="dropdown-menu-align-right"
      >
        <Dropdown.Item eventKey="profile"><NavLink to="/profile" style={link} className="navbar-link">profile</NavLink></Dropdown.Item> 
-       <Dropdown.Item eventKey="signup"><NavLink to="/signup" style={link} className="navbar-link">Signup</NavLink></Dropdown.Item> 
-       <Dropdown.Item eventKey="signin"><NavLink to="/signin" style={link} className="navbar-link">Signin</NavLink></Dropdown.Item> 
+       <Dropdown.Item eventKey="signup"><NavLink to="/signup" style={link} className="navbar-link">Signup</NavLink></Dropdown.Item>
+       <Dropdown.Item eventKey="signin"><NavLink to="/signin" style={link} className="navbar-link">Signin</NavLink></Dropdown.Item>
        <Dropdown.Item eventKey="signout"><SignOut /></Dropdown.Item> 
     </DropdownButton>
     </div>

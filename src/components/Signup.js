@@ -26,7 +26,7 @@ class Signup extends Component{
     }
 
     render(){
-
+        if (localStorage.token === undefined){
         return(
             <div className="signup-form">
             <form onSubmit={this.handleSubmit}>
@@ -63,6 +63,12 @@ class Signup extends Component{
         </div>
         )
     }
+    else return (
+        <div>
+            <h4 className="signup-alart">You are signed in to create new account signout first</h4>
+        </div>
+    )
+}
 }
 
 
