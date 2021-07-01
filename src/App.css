@@ -1,83 +1,139 @@
-.App {
-  /* text-align: center; */
- 
+.home-page{ 
+  color: goldenrod;
+  padding-top: 30px;
+  
 }
-
-/* home page style */
-.home-page{
-  background-image: url(./book.jpg);
-  background-position: center;
-  background-color: #cccccc; 
-  height: 92vh;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: auto;
-}
-
-.home{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.home-logo {
-  font-family: 'Century Gothic';
-  font-size: 5em;
+.home-title{
+  text-align: left;
+  font-style: oblique;
+  font-family: "Trattatello, fantasy";
   font-weight: bold;
-  color: blueviolet;
-  margin-bottom: 25px;
-  text-align: center;
+  margin-left: 30px;
 }
+
 .home-content{
-  font-size: 2em;
-  text-align: center;
-  color: white;
+  font-size: 1.5em;
+  text-align: left;
+  color: black;
+  margin-left: 30px;
   padding-bottom: 30px;
+  font-family: "cursive"
 }
 
-.navbar-link {
-  font-family: 'Optima';
-  font-size:  1.2em;
-  font-weight: bold;
+.home-link{
+  font-family: "Trattatello, fantasy";
+  font-size: 1.5em;
+  margin-left: 30px;
+
 }
 
-.btn-home{
+.books-container{
+  margin-left: 20px;
+
+}
+
+/* .btn-home{
   width: 100px;
   position: absolute;
-}
+} */
 
 .book{
-  /* float: left; */
-  padding: 15px;
-  display:inline-block;
-  height: 325 px;
-  width: 232px; 
-  /* border: 1px solid #000000; */
-  word-wrap: break-word;
+  float: left;
+  padding: 10px;
+ 
+  /* border: 4px groove gray; */
+  /* height: 325 px; */
+  /* width: 232px;  */
+  /* border: 1px solid gray; */
+  /* word-wrap: break-word; */
   
 }
 
-.book-showpage{
+.book-content{
+  width: 306px;
+  height: 600px;
+  display: inline-block;
+  border: 1px groove gray;
+  text-align: center;
+  font-family: "Trattatello, fantasy";
+  color: black;
+  
+}
+.user-books{
+  float: left;
+  padding: 10px;
+ 
+ 
+}
+.user-container{
   margin-left: 20px;
 }
-
-.comment{
-  width: 400px; 
+.user-content{
+  width: 306px;
+  height: 600px;
+  display: inline-block;
+  border: 1px groove gray;
+  text-align: center;
+  font-family: "Trattatello, fantasy";
+  color: black;
 }
 
+.profile-title{
+  font-family: "Trattatello, fantasy";
+  text-align: center;
+  color: goldenrod;
+}
+
+.profile-photo{
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.name-bio{
+  font-family: "Trattatello, fantasy";
+  margin-left: 40px;
+  margin-top: 20px;
+  color: black
+}
+
+.about-section{
+  width: 600px;
+  height: 600px;
+  font-family: "Trattatello, fantasy";
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 1.5em;
+ 
+}
+.signup-alart{
+  color: red;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.signin-alart{
+  color: black;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+/* .comment{
+  width: 400px; 
+} */
 
 
-.comment-form{
+
+/* .comment-form{
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  /* margin-left: 5%; */
-  /* margin-right:25%; */
-  /* margin-top: 10%; */
+ margin-left: 5%; 
+  margin-right:25%; 
+  margin-top: 10%; 
   width: 50%;
-}
-.comment-form input[type=text], select {
+} */
+/* .comment-form input[type=text], select {
   width: 100%;
   padding: 12px 12px;
   margin: 8px 0;
@@ -86,8 +142,8 @@
   border-radius: 4px;
   box-sizing: border-box;
   
-}
-
+} */
+/* 
 .comment-form input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
@@ -101,12 +157,12 @@
 
 .add-book input[type=submit]:hover {
   background-color: #45a049;
-}
+} */
 
 
 /*  */
 
-.add-book{
+/* .add-book{
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -114,8 +170,8 @@
   margin-right:25%;
   margin-top: 10%;
   width: 50%;
-}
-.add-book input[type=text], select {
+} */
+/* .add-book input[type=text], select {
   width: 100%;
   padding: 12px 12px;
   margin: 8px 0;
@@ -124,8 +180,8 @@
   border-radius: 4px;
   box-sizing: border-box;
   
-}
-
+} */
+/* 
 .add-book input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
@@ -135,13 +191,13 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
+} */
 
-.add-book input[type=submit]:hover {
+/* .add-book input[type=submit]:hover {
   background-color: #45a049;
 }
 
-/* 
+
 .book-name{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -149,42 +205,62 @@
   overflow-wrap: break-word;
   font-weight: bold;
   color: #0c3d59;
-} */
+}  */
 
-/* navbar styling */
-
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signin-form, .signup-form{
+  border: 1px solid rgb(128, 128, 128);
+  text-align:left; 
+  /* background-color: rgb(127, 236, 255); */
+  width: 500px;
+  /* height: px; */
+  padding: 50px;
+  margin-top: 100px;
+  margin-right: 500px;
+  margin-left: 500px;
+  margin-bottom: 100px;    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-logo {
+  font-family: 'cursive';
+  font-style: italic;
+  font-size: 2.3em;
+  font-weight: bold;
+  padding: 40px;
+  margin: 0px 8px 8px;
+  color: goldenrod;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-link {
+  font-family: 'cursive';
+  font-size:  1.5em;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown-button{
+  float: right;
+  margin-right: 20px;
+  margin-top: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+#dropdown-menu-align-right{
+  background-color: maroon;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.signout-button{
+  border: none;
+  font-weight: bold;
+  font-family: 'cursive';
+  color:black;
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: white;
+  text-align: center;
+  margin-left: 18px;
+
+}
+

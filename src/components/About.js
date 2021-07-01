@@ -2,9 +2,11 @@ import React from 'react'
 
 const About =() => {
     return(
-        <div>
-        <h1>Zbooks App</h1>
-        <h4>Zbooks is an application that allow users to create, search, like, and comment on books</h4>
+        <div className="about-section">
+        <p>Zbooks is an application that use google book api to search for books.</p>
+        <p>This app allow users to view books and click on buy link to view more details about book.</p>
+        <p>User can create account to access more activities like saving books for later review also have 
+            delete functionality to remove unwanted books.</p>
     </div>
     )
   

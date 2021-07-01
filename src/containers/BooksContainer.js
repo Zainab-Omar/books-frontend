@@ -3,51 +3,42 @@ import { connect } from 'react-redux'
 import { fetchBooks } from '../actions/fetchBooks'
 import Books from '../components/Books'
 import SearchBook from '../components/SearchBook'
-// import SortButton from '../components/SortButton'
-// user can search a specific book
 
 class BooksContainer extends React.Component {
-
     state = {
-        // hold search term
         searchTerm: '',
-        sortbooks: []
     }
 
     componentDidMount(){
-        this.props.fetchBooks()
+        if (this.state.searchTerm.length > 0)
+         this.props.fetchBooks(this.state.searchTerm)
+         else
+         this.props.fetchBooks()
     }
 
-    findBook = (value) => {
-       const newList = this.props.books.filter(book => {
-           const lc = book.title.toLowerCase();
-           const valueLc = value.toLowerCase();
-           return lc.includes(valueLc)
-       })
-
-       this.setState({searchTerm: newList})
-       console.log(this.state.searchTerm)
-
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
-    sortBooks = () => {
-        // const books = console.log(this.props.books)
-        //  debugger
-        const newlist = this.props.books.sort((a,b)=> (a.title > b.title) ? 1: -1)
-        this.setState({sortbooks: newlist})
-        console.log(this.state.sortbooks)
-
+    handleSubmit = event => {
+        event.preventDefault()
+        this.props.fetchBooks(this.state.searchTerm)
+        this.setState({searchTerm: ''})
     }
 
     render(){
-    //    console.log(this.props.books)
         return(
-            <div>
+            <div className="books-container">
                 <br />
-                <button onClick={this.sortBooks}>Sort A-Z</button>
-                <SearchBook findBook = {this.findBook}/> 
+                <form onSubmit={this.handleSubmit}>
+                    <label>Search a Book:</label>
+                    <input type="text" name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
+                    <input type="submit" />
+                </form>
                 <br />
-                <Books books = {this.state.searchTerm.length > 0 ? this.state.searchTerm : this.props.books} />
+                <Books books = {this.props.books} />
             </div>
         )
     }
@@ -58,7 +49,5 @@ const mapStateToProps = state => {
         books: state.books
     }
 }
-
-
 
 export default connect(mapStateToProps, {fetchBooks})(BooksContainer)

@@ -6,8 +6,6 @@ import LikeButton from '../components/LikeButton'
 import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
 import { likeBook } from '../actions/likeBook'
-// import EditBook from '../components/EditBook'
-
 
 class BookShow extends React.Component {
    

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
+    users: userReducer,
     books: bookReducer,
     comments: commentReducer
 })
@@ -9,13 +10,13 @@ export default rootReducer;
 
 function bookReducer(state = [], action) {
     switch (action.type){
-        // fetch all existing books in backend server
         case 'FETCH_BOOKS':
             return  action.books
 
         // add new book to database
-        case 'ADD_BOOK':
-            return state.concat(action.book)
+        // case 'ADD_BOOK':
+        //     return state.concat(action.book)
+            // return state.concat(action.book)
 
         // edit existing book in database
         // case 'EDIT_BOOK':
@@ -60,4 +61,37 @@ function commentReducer(state = [], action){
             
     }
 
+}
+
+function userReducer(state = [], action) {
+    switch (action.type) {
+        case 'LOGIN_USER':
+          return {...state, currentUser: action.userObj}
+        
+
+        case 'SIGNOUT_USER': 
+           return {...state, currentUser: {}}
+
+        case 'ADD_BOOK':
+            return {
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    books: state.currentUser.books.concat(action.book)
+                }
+            }
+          
+        
+        case 'DELETE_BOOK':
+            return {
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    books: state.currentUser.books.filter(book => book.id !== action.book.id)
+                }
+            }
+
+        default:
+          return state;
+      }
 }

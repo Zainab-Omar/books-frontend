@@ -1,18 +1,31 @@
 import './App.css';
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import BooksContainer from './containers/BooksContainer'
 import BookInput from './components/BookInput';
 import BookShow from './containers/BookShow'
 import Home from './components/Home'
 import About from './components/About'
+import Signup from './components/Signup';
+import Signin from './components/Signin';
+import {fetchProfile} from './actions/fetchProfile'
+import SignOut from './components/SignOut'
+import {connect} from 'react-redux'
+import Profile from './components/Profile'
+
 
 class App extends React.Component {
 
+  componentDidMount = () => {
+    this.props.fetchProfile()
+  }
+
   render() {
     return (
+      <div>
       <Router>
+        <Switch>
         <div className="App">
         <NavBar />
           <Route exact path="/" component={Home} />
@@ -20,11 +33,22 @@ class App extends React.Component {
           <Route exact path="/books" component={BooksContainer} />
           <Route exact path="/add/book" component={BookInput} />
           <Route exact path="/books/:bookId" component={BookShow} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signin" component={Signin} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/signout" component={SignOut} />
+         
         </div>
+        </Switch>
       </Router>
+      </div>
     )
   }
 }
- 
 
-export default App;
+
+const mapDispatchToProps = dispatch => ({
+  fetchProfile: () => dispatch(fetchProfile())
+})
+
+export default connect(null, mapDispatchToProps)(App);
