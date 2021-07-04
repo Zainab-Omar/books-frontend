@@ -26,7 +26,7 @@ const Profile = ({users, deleteBook})  => {
                           <img src={book.img_url} width="300" height="400" alt="book image" />
                           
                           <p>Title: {book.title}</p>
-                          <p>Authors: {book.authors.map(auther => auther)}</p>
+                          <p>Authors: {book.authors.map(author => author)}</p>
                           <p>published Date: {book.published_date}</p>
                           <a href= {book.buy_link} target="_blank">Buy Link</a><br/>
                           <p><Link key={book.id} to={`/books/${book.id}`}>Show details</Link></p>

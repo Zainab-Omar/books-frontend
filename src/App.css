@@ -32,20 +32,11 @@
 
 }
 
-/* .btn-home{
-  width: 100px;
-  position: absolute;
-} */
+
 
 .book{
   float: left;
   padding: 10px;
- 
-  /* border: 4px groove gray; */
-  /* height: 325 px; */
-  /* width: 232px;  */
-  /* border: 1px solid gray; */
-  /* word-wrap: break-word; */
   
 }
 
@@ -117,6 +108,10 @@
   color: black;
   margin-left: 40px;
   margin-top: 30px;
+}
+
+.book-showpage{
+  
 }
 /* .comment{
   width: 400px; 
