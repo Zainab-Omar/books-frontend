@@ -31,13 +31,16 @@ class BookShow extends React.Component {
             <div className="book-showpage">
                 <div className="book-details">
                 <br />
-                <img src={this.state.book.img_url} alt="picture" width="300"  height="400" /> 
+                <img src={this.state.book.img_url} alt="picture" width="300"  height="400" /> <br/><br/>
                 <h6> Title: {this.state.book.title} </h6>
                 <h6>Authors: {this.state.book.authors}</h6>
+                <h6>published Date: {this.state.book.published_date}</h6>
+                <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
+            </div>
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
                 <CommentInput bookId = {this.props.match.params.bookId} />
                 <Comments comments={this.props.comments} />
-                </div>
+               
                 
               
             </div>
