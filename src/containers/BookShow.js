@@ -7,13 +7,14 @@ import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
 import { likeBook } from '../actions/likeBook'
 
+
 class BookShow extends React.Component {
    
     state = {book: {}}
 
-    handleClick = () => {
-        this.props.likeBook(this.state.book)
-    }
+    // handleClick = () => {
+    //     this.props.likeBook(this.state.book)
+    // }
 
     componentDidMount() {
         const {bookId} = this.props.match.params
@@ -38,8 +39,8 @@ class BookShow extends React.Component {
                 <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
             </div>
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
-                <CommentInput bookId = {this.props.match.params.bookId} />
-                <Comments comments={this.props.comments} />
+                {/* <CommentInput bookId = {this.props.match.params.bookId} />
+                <Comments comments={this.props.comments} /> */}
                
                 
               
@@ -51,11 +52,9 @@ class BookShow extends React.Component {
 }
 
 const mapStateToProps = (state, selectedBook) => {
-    const book = state.users.currentUser.books.find(book => book.id === selectedBook.match.params.bookId) || {}
     return({
-        book: book,
-        comments: state.users.currentUser.comments
+        users: state.users.currentUser,
     })
 }
 
-export default connect(mapStateToProps, { fetchBook, fetchComments, likeBook})(BookShow)
+export default connect(mapStateToProps, { fetchBook, fetchComments, likeBook })(BookShow)
