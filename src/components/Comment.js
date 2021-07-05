@@ -4,8 +4,7 @@ const Comment = ({comment}) => {
     return(
         <div className="comment">
             <hr />
-            <h4>{comment.commenter}</h4>
-            <p>{comment.text}</p>
+            <p>{comment.note}</p>
     
         </div>
     )

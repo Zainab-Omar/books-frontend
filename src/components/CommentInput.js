@@ -4,8 +4,7 @@ import { createComment } from '../actions/createComment'
 
 class CommentInput extends React.Component {
     state = {
-        text: '',
-        commenter: '',
+        note: '',
         book_id: this.props.bookId
     }
 
@@ -19,21 +18,17 @@ class CommentInput extends React.Component {
         event.preventDefault()
         this.props.createComment(this.state)
         this.setState({
-            text: '',
-            commenter: ''
+            note: '',
         })
     }
 
     render(){
         return(
             <div className="comment-form">
-                <h3>Add Comment</h3>
+                <h3>Add Note: </h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Comment: </label>
-                    <input type="text" name="text" value={this.state.text} onChange={this.handleChange} />
-
-                    <label>Name: </label>
-                    <input type="text" name="commenter" value={this.state.commenter} onChange={this.handleChange} />
+                    <label>Note: </label>
+                    <textarea name="note" value={this.state.note} onChange={this.handleChange} /><br/>
 
                     <input type="submit" />
                 </form>

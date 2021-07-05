@@ -39,8 +39,8 @@ class BookShow extends React.Component {
                 <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
             </div>
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
-                {/* <CommentInput bookId = {this.props.match.params.bookId} />
-                <Comments comments={this.props.comments} /> */}
+                <CommentInput bookId = {this.props.match.params.bookId} />
+                <Comments comments={this.props.comments} /> 
                
                 
               

@@ -5,7 +5,7 @@ const Comments = ({comments}) => {
 
     return(
         <div>
-            <h3>Comments: </h3>
+            <h3>Notes: </h3>
             {renderComments}
         </div>
     )
