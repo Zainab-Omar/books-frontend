@@ -9,9 +9,7 @@ import { likeBook } from '../actions/likeBook'
 
 
 class BookShow extends React.Component {
-   
     state = {book: {}}
-
     // handleClick = () => {
     //     this.props.likeBook(this.state.book)
     // }
@@ -20,7 +18,7 @@ class BookShow extends React.Component {
         const {bookId} = this.props.match.params
         if (bookId != null) {
             this.props.fetchBook(bookId).then(book =>{
-                this.setState({ book })
+                this.setState({book})
             })
             this.props.fetchComments(bookId)
         }
@@ -39,7 +37,8 @@ class BookShow extends React.Component {
                 <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
             </div>
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
-                <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/>
+                {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
+                 {/* <CommentInput bookId = {this.props.match.params.bookId} /> */}
                 <Comments comments={this.props.comments} /> 
                
                 
@@ -51,7 +50,7 @@ class BookShow extends React.Component {
 
 }
 
-const mapStateToProps = (state, selectedBook) => {
+const mapStateToProps = (state) => {
     return({
         users: state.users.currentUser,
     })
