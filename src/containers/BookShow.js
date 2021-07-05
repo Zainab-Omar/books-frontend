@@ -20,7 +20,7 @@ class BookShow extends React.Component {
             this.props.fetchBook(bookId).then(book =>{
                 this.setState({book})
             })
-            this.props.fetchComments(bookId)
+            // this.props.fetchComments(bookId)
         }
     }
 
@@ -39,7 +39,7 @@ class BookShow extends React.Component {
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
                 {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
                  {/* <CommentInput bookId = {this.props.match.params.bookId} /> */}
-                <Comments comments={this.props.comments} /> 
+                {this.props.users !== undefined? <Comments comments={this.props.users.comments} />  : null}
                
                 
               
