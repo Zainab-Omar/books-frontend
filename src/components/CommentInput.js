@@ -5,7 +5,8 @@ import { createComment } from '../actions/createComment'
 class CommentInput extends React.Component {
     state = {
         note: '',
-        book_id: this.props.bookId
+        book_id: this.props.bookId,
+        user_id: this.props.userId
     }
 
     handleChange = (event) => {

@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 const rootReducer = combineReducers({
     users: userReducer,
     books: bookReducer,
-    comments: commentReducer
+    // comments: commentReducer
 })
 
 export default rootReducer;
@@ -46,22 +46,22 @@ function bookReducer(state = [], action) {
     }
 }
 
-function commentReducer(state = [], action){
-    switch(action.type) {
+// function commentReducer(state = [], action){
+//     switch(action.type) {
 
-        case 'FETCH_COMMENTS':
-            return action.comments
+//         case 'FETCH_COMMENTS':
+//             return action.comments
 
-        case 'ADD_COMMENT':
-            return state.concat(action.comment)
+//         case 'ADD_COMMENT':
+//             return state.concat(action.comment)
 
-        default:
-            return state
+//         default:
+//             return state
 
             
-    }
+//     }
 
-}
+// }
 
 function userReducer(state = [], action) {
     switch (action.type) {
@@ -90,6 +90,19 @@ function userReducer(state = [], action) {
                     books: state.currentUser.books.filter(book => book.id !== action.book.id)
                 }
             }
+
+        // case 'FETCH_COMMENTS':
+        //         return action.comments
+    
+        case 'ADD_COMMENT':
+                // return state.concat(action.comment)
+                return {
+                    ...state,
+                    currentUser: {
+                        ...state.currentUser,
+                        comments: state.currentUser.comments.concat(action.comment)
+                    }
+                }
 
         default:
           return state;
