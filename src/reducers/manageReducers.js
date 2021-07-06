@@ -95,14 +95,14 @@ function userReducer(state = [], action) {
         //         return action.comments
     
         case 'ADD_COMMENT':
-                // return state.concat(action.comment)
-                return {
-                    ...state,
-                    currentUser: {
-                        ...state.currentUser,
-                        comments: state.currentUser.comments.concat(action.comment)
-                    }
+            // return state.concat(action.comment)
+            return {
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    comments: state.currentUser.comments.concat(action.comment)
                 }
+            }
 
         default:
           return state;

@@ -31,6 +31,7 @@ class Signin extends React.Component {
             
             <div className="signin-form">
                 <h1>Sign In !</h1>
+                
             <form onSubmit={this.handleSubmit}>
                 <FormGroup>
 
@@ -48,8 +49,6 @@ class Signin extends React.Component {
             </Link>
             </form>
             </div>
-
-
         )
     }
     else return(
@@ -64,6 +63,7 @@ class Signin extends React.Component {
     
   }
 }
+
 
 const mapDispatchToProps = dispatch => ({
     userSignin: userInfo => dispatch(userSignin(userInfo))

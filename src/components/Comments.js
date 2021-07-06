@@ -1,7 +1,8 @@
 import React from 'react'
 import Comment from './Comment'
-const Comments = ({comments}) => {
-    const renderComments = comments != null && comments.length > 0 ? comments.map(comment => <Comment key={comment.id} comment={comment}/>) : null
+const Comments = ({comments, bookId}) => {
+    const filterComments = comments != null && comments.length > 0 ? comments.filter(c => c.book_id === parseInt(bookId)) : null
+    const renderComments = filterComments.map(comment => <Comment key={comment.id} comment={comment}/>) 
 
     return(
         <div>
