@@ -27,8 +27,8 @@ class BookShow extends React.Component {
     render() {
         console.log(this.state)
         return(
-            <div className="book-showpage">
-                <div className="book-details">
+            <div className="row">
+                <div className="book-details column">
                 <br />
                 <img src={this.state.book.img_url} alt="picture" width="300"  height="400" /> <br/><br/>
                 <h6> Title: {this.state.book.title} </h6>
@@ -37,7 +37,7 @@ class BookShow extends React.Component {
                 <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
               </div>
 
-              <div className="comment-form-show">
+              <div className="comment-form-show column">
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
                 {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
                  {/* <CommentInput bookId = {this.props.match.params.bookId} /> */}

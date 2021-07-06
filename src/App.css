@@ -125,22 +125,39 @@
   text-align: left;
 
 }
+.comment-content{
+  font-family: "Trattatello, fantasy";
+  margin-left: 20px;
+  font-size: 1.2em;
+}
 
+.comment-date{
+  font-weight: bold;
+  font-size: 0.9em;
+  color: coral;
+}
 
-
-
-
-
-
-/* .comment-form{
+.comment-form{
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 20px;
- margin-left: 5%; 
+  padding: 10px;
+  margin-left: 10px; 
   margin-right:25%; 
   margin-top: 10%; 
-  width: 50%;
-} */
+}
+
+.column {
+  float: left;
+  width: 40%;
+  padding-left: 40px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* .comment-form input[type=text], select {
   width: 100%;
   padding: 12px 12px;
