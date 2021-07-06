@@ -41,7 +41,7 @@ class BookShow extends React.Component {
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
                 {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
                  {/* <CommentInput bookId = {this.props.match.params.bookId} /> */}
-                {this.props.users !== undefined? <Comments comments={this.props.users.comments} />  : null}
+                {this.props.users !== undefined? <Comments comments={this.props.users.books[this.props.match.params.bookId - 1].comments} />  : null}
                
                 </div> 
               
