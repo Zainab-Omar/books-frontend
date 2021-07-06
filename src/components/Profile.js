@@ -35,7 +35,7 @@ const Profile = ({users, deleteBook})  => {
                           </div>
                         </div>
                     
-                )})}
+            )})}
 
                 </div>
             )

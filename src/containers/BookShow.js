@@ -2,17 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CommentInput from '../components/CommentInput'
 import Comments from '../components/Comments'
-import LikeButton from '../components/LikeButton'
 import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
-import { likeBook } from '../actions/likeBook'
 import { Redirect } from "react-router";
 
 class BookShow extends React.Component {
+
     state = {book: {}}
-    // handleClick = () => {
-    //     this.props.likeBook(this.state.book)
-    // }
 
     componentDidMount() {
         const {bookId} = this.props.match.params
@@ -20,7 +16,6 @@ class BookShow extends React.Component {
             this.props.fetchBook(bookId).then(book =>{
                 this.setState({book})
             })
-            // this.props.fetchComments(bookId)
         }
     }
 
@@ -38,12 +33,9 @@ class BookShow extends React.Component {
               </div>
 
               <div className="comment-form-show column">
-                {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
                 {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
-                 {/* <CommentInput bookId = {this.props.match.params.bookId} /> */}
                 {this.props.users !== undefined? <Comments comments={this.props.users.comments} bookId = {this.props.match.params.bookId} />  : null}
-               
-                </div> 
+               </div> 
               
             </div>
         )
@@ -64,4 +56,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, { fetchBook, fetchComments, likeBook })(BookShow)
+export default connect(mapStateToProps, { fetchBook, fetchComments})(BookShow)
