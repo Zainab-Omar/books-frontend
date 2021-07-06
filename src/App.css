@@ -32,20 +32,11 @@
 
 }
 
-/* .btn-home{
-  width: 100px;
-  position: absolute;
-} */
+
 
 .book{
   float: left;
   padding: 10px;
- 
-  /* border: 4px groove gray; */
-  /* height: 325 px; */
-  /* width: 232px;  */
-  /* border: 1px solid gray; */
-  /* word-wrap: break-word; */
   
 }
 
@@ -70,7 +61,7 @@
 }
 .user-content{
   width: 306px;
-  height: 600px;
+  height: 650px;
   display: inline-block;
   border: 1px groove gray;
   text-align: center;
@@ -118,21 +109,55 @@
   margin-left: 40px;
   margin-top: 30px;
 }
-/* .comment{
-  width: 400px; 
-} */
 
+.book-details{
+  font-family: "Trattatello, fantasy";
+}
 
+.book-showpage{
+  padding-left: 20px;
 
-/* .comment-form{
+}
+
+.comment-show{
+  width: 600px;
+  border: 1px solid black;
+  text-align: left;
+
+}
+.comment-content{
+  font-family: "Trattatello, fantasy";
+  margin-left: 20px;
+  font-size: 1.2em;
+}
+
+.comment-date{
+  font-weight: bold;
+  font-size: 0.9em;
+  color: coral;
+}
+
+.comment-form{
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 20px;
- margin-left: 5%; 
+  padding: 10px;
+  margin-left: 10px; 
   margin-right:25%; 
   margin-top: 10%; 
-  width: 50%;
-} */
+}
+
+.column {
+  float: left;
+  width: 40%;
+  padding-left: 40px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* .comment-form input[type=text], select {
   width: 100%;
   padding: 12px 12px;

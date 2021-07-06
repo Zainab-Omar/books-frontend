@@ -2,56 +2,58 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CommentInput from '../components/CommentInput'
 import Comments from '../components/Comments'
-import LikeButton from '../components/LikeButton'
 import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
-import { likeBook } from '../actions/likeBook'
+import { Redirect } from "react-router";
 
 class BookShow extends React.Component {
-   
-    state = {book: {}}
 
-    handleClick = () => {
-        this.props.likeBook(this.state.book)
-    }
+    state = {book: {}}
 
     componentDidMount() {
         const {bookId} = this.props.match.params
         if (bookId != null) {
             this.props.fetchBook(bookId).then(book =>{
-                this.setState({ book })
+                this.setState({book})
             })
-            this.props.fetchComments(bookId)
         }
     }
 
     render() {
-        console.log(this.state)
+    if(localStorage.token !== undefined){
         return(
-            <div className="book-showpage">
+            <div className="row">
+                <div className="book-details column">
                 <br />
-                <img src={this.state.book.img_url} alt="picture" width="200"  height="200" /> 
-                <h4> Title: {this.state.book.title} </h4>
-                <h4>Author: {this.state.book.author}</h4>
-                {/* <EditBook book = {this.state.book} /> <br /> */}
-                <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/>
-                <CommentInput bookId = {this.props.match.params.bookId} />
-                <Comments comments={this.props.comments} />
-                
+                <img src={this.state.book.img_url} alt="picture" width="300"  height="400" /> <br/><br/>
+                <h6> Title: {this.state.book.title} </h6>
+                <h6>Authors: {this.state.book.authors}</h6>
+                <h6>published Date: {this.state.book.published_date}</h6>
+                <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
+              </div>
+
+              <div className="comment-form-show column">
+                {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
+                {this.props.users !== undefined? <Comments comments={this.props.users.comments} bookId = {this.props.match.params.bookId} />  : null}
+               </div> 
               
             </div>
         )
+    }
+    else return (
+        
+        <Redirect to="/signin" />  
+
+)
     }
 
 
 }
 
-const mapStateToProps = (state, selectedBook) => {
-    const book = state.books.find(book => book.id === selectedBook.match.params.bookId) || {}
+const mapStateToProps = (state) => {
     return({
-        book: book,
-        comments: state.comments
+        users: state.users.currentUser,
     })
 }
 
-export default connect(mapStateToProps, { fetchBook, fetchComments, likeBook})(BookShow)
+export default connect(mapStateToProps, { fetchBook, fetchComments})(BookShow)
