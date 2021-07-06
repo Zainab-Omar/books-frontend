@@ -35,13 +35,15 @@ class BookShow extends React.Component {
                 <h6>Authors: {this.state.book.authors}</h6>
                 <h6>published Date: {this.state.book.published_date}</h6>
                 <a href= {this.state.book.buy_link} target="_blank">Buy Link</a><br/>
-            </div>
+              </div>
+
+              <div className="comment-form-show">
                 {/* <LikeButton book = {this.state.book} likeBook={this.handleClick}/><br/> */}
                 {this.props.users !== undefined? <CommentInput bookId = {this.props.match.params.bookId} userId = {this.props.users.id}/> : null}
                  {/* <CommentInput bookId = {this.props.match.params.bookId} /> */}
                 {this.props.users !== undefined? <Comments comments={this.props.users.comments} />  : null}
                
-                
+                </div> 
               
             </div>
         )
