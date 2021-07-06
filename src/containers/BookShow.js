@@ -6,7 +6,7 @@ import LikeButton from '../components/LikeButton'
 import { fetchComments } from '../actions/fetchComments'
 import { fetchBook } from '../actions/fetchBook'
 import { likeBook } from '../actions/likeBook'
-
+import { Redirect } from "react-router";
 
 class BookShow extends React.Component {
     state = {book: {}}
@@ -25,7 +25,7 @@ class BookShow extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+    if(localStorage.token !== undefined){
         return(
             <div className="row">
                 <div className="book-details column">
@@ -47,6 +47,12 @@ class BookShow extends React.Component {
               
             </div>
         )
+    }
+    else return (
+        
+        <Redirect to="/signin" />  
+
+)
     }
 
 
