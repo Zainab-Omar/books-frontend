@@ -12,7 +12,9 @@ export const userSignin = user => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.message){}
+            if(data.message){
+                dispatch(handleError(data.message))
+            }
             else {
                localStorage.setItem("token", data.jwt)  
                 dispatch(loginUser(data.user))
@@ -24,4 +26,9 @@ export const userSignin = user => {
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
     userObj
+})
+
+const handleError = error => ({
+    type: 'ERROR_MESSAGE',
+    error
 })
