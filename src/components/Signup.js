@@ -35,13 +35,13 @@ class Signup extends Component{
                 <FormGroup>
 
                 <label>username: </label>
-                <FormControl input type="text" name="username" value={this.state.username} onChange={this.handleChange}/>
+                <FormControl input type="text" name="username" value={this.state.username} onChange={this.handleChange} required/>
 
                 <label>email: </label>
-                <FormControl input type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
+                <FormControl input type="text" name="email" value={this.state.email} onChange={this.handleChange} required/>
 
                 <label>password: </label>
-                <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange}/><br/>
+                <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange} required/><br/>
 
                 <h6 style={{color:"rgb(0 123 255)"}}>Optional</h6>
 

@@ -35,10 +35,10 @@ class Signin extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <FormGroup>
 
-                <FormControl input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
+                <FormControl input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} required />
                 <br />
 
-                <FormControl input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+                <FormControl input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} required/>
                 <br />
 
                 <button className="btn btn-primary" type="submit">Sign In</button>
