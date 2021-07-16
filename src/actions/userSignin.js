@@ -12,9 +12,7 @@ export const userSignin = user => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.message){
-                dispatch(loginUser(data.message))
-            }
+            if(data.message){}
             else {
                localStorage.setItem("token", data.jwt)  
                 dispatch(loginUser(data.user))

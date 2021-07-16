@@ -26,7 +26,7 @@ class Signup extends Component{
     }
 
     render(){
-        if (localStorage.token === undefined){
+       if (localStorage.token === undefined){
         return(
             <div className="signup-form">
             <form onSubmit={this.handleSubmit}>
