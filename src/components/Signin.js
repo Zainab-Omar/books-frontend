@@ -21,9 +21,20 @@ class Signin extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.userSignin(this.state)
+        
         this.props.history.push("./books")
         
     }
+
+    // renderAlert() {
+    //     if (this.props.errors) {
+    //       return (
+    //         <div>
+    //           <strong>Oops!</strong> {this.props.errors}
+    //         </div>
+    //       );
+    //     }
+    //   }
 
     render(){
         if (localStorage.token === undefined){
@@ -64,7 +75,11 @@ class Signin extends React.Component {
   }
 }
 
-
+// const mapStateToProps = state => {
+//     return {
+//         errors: state.users.currentUser
+//     }
+// }
 const mapDispatchToProps = dispatch => ({
     userSignin: userInfo => dispatch(userSignin(userInfo))
 })

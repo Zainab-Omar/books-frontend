@@ -7,6 +7,7 @@ import SearchBook from '../components/SearchBook'
 class BooksContainer extends React.Component {
     state = {
         searchTerm: '',
+        sortedBooks: []
     }
 
     componentDidMount(){
@@ -27,7 +28,7 @@ class BooksContainer extends React.Component {
         this.props.fetchBooks(this.state.searchTerm)
         this.setState({searchTerm: ''})
     }
-
+    
     render(){
         return(
             <div className="books-container">
@@ -38,7 +39,8 @@ class BooksContainer extends React.Component {
                     <input type="submit" />
                 </form>
                 <br />
-                <Books books = {this.props.books} />
+                <button onClick={this.sortBooks}>Sort</button>
+                {/* <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.props.books.items}/> */}
             </div>
         )
     }
