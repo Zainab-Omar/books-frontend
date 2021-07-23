@@ -28,7 +28,14 @@ class BooksContainer extends React.Component {
         this.props.fetchBooks(this.state.searchTerm)
         this.setState({searchTerm: ''})
     }
-    
+
+    sortBooks = () => {
+        const newList = this.props.books.items.map(item => item.volumeInfo).sort((a,b) => (a.title > b.title) ? 1:-1)
+        this.setState({sortbooks: newList})
+        // console.log(this.state.sortbooks)
+
+    }
+
     render(){
         return(
             <div className="books-container">
