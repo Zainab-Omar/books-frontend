@@ -47,7 +47,7 @@ class BooksContainer extends React.Component {
                 </form>
                 <br />
                 <button onClick={this.sortBooks}>Sort</button>
-                {/* <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.props.books.items}/> */}
+                <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.props.books.items}/>
             </div>
         )
     }
