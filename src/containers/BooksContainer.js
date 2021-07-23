@@ -46,7 +46,7 @@ class BooksContainer extends React.Component {
                     <input type="submit" />
                 </form>
                 <br />
-                <button onClick={this.sortBooks}>Sort</button>
+                <button onClick={this.sortBooks}>Sort A-Z</button>
                 <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.props.books.items}/>
             </div>
         )
