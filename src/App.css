@@ -157,6 +157,10 @@
   display: table;
   clear: both;
 }
+.image-size{
+  width: 400px;
+  height: 300px;
+}
 
 /* .comment-form input[type=text], select {
   width: 100%;
