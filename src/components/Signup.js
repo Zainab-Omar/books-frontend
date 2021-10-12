@@ -9,8 +9,6 @@ class Signup extends Component{
         username: "",
         email: "",
         password: "",
-        avatar: "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_640.png",
-        bio: ""
     }
 
     handleChange = event => {
@@ -43,15 +41,7 @@ class Signup extends Component{
                 <label>password: </label>
                 <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange} required/><br/>
 
-                <h6 style={{color:"rgb(0 123 255)"}}>Optional</h6>
-
-                <label>Use default avatar or add yours: </label>
-                <FormControl input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange} />
-              
-
-                <label>bio: </label>
-                <FormControl textarea name="bio" value={this.state.bio} onChange={this.handleChange}/>
-                <br/>
+    
                 <button className="btn btn-primary" type="submit">Sign Up</button>
 
                 </FormGroup>
