@@ -58,6 +58,7 @@
 }
 .user-container{
   margin-left: 20px;
+  float: left;
 }
 .user-content{
   width: 306px;

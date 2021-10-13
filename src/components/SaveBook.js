@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addBook } from '../actions/addBook'
-
+import Button from 'react-bootstrap/Button'
 class SaveBook extends React.Component {
    
     state = {book: { 
@@ -20,7 +20,8 @@ class SaveBook extends React.Component {
     render() {
         
         return(
-            <button onClick={this.handleClick}>add to favorites</button>
+            <Button variant="link" onClick={this.handleClick}>add to favorites</Button>
+            // <button onClick={this.handleClick}>add to favorites</button>
         )
     }
 
