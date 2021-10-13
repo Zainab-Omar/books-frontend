@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {signout} from '../actions/signout'
 import { Redirect } from "react-router";
-
+import { Button } from 'react-bootstrap'
 class SignOut extends React.Component{
 
     handleClick = event => {
@@ -14,7 +14,8 @@ class SignOut extends React.Component{
 
     render(){
         return(
-          <button className="signout-button" onClick={this.handleClick} >SignOut</button>
+        <Button className="signout-button" variant="link" onClick={this.handleClick}>SignOut</Button>
+        //   <button className="signout-button" onClick={this.handleClick} >SignOut</button>
         )
     }
    

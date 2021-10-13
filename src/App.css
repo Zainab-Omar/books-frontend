@@ -70,6 +70,11 @@
   color: black;
 }
 
+.user-name{
+  margin-left: 20px;
+  margin-top: 10px ;
+}
+
 .profile-title{
   font-family: "Trattatello, fantasy";
   text-align: center;
@@ -283,14 +288,13 @@
 .signout-button{
   border: none;
   font-weight: bold;
-  font-family: 'cursive';
   color:black;
-  font-size: 22px;
+  /* font-size: 22px; */
   text-decoration: none;
   cursor: pointer;
   background-color: white;
   text-align: center;
-  margin-left: 18px;
+  /* margin-left: 18px; */
 
 }
 

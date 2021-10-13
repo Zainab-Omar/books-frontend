@@ -10,7 +10,7 @@ const NavBar = () => {
 
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
      
-      <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="/">ZBooks</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -20,7 +20,7 @@ const NavBar = () => {
           </Nav>
           <Nav>
           <Nav.Link href="/profile">Profile</Nav.Link>
-          <Nav.Link><SignOut/></Nav.Link>
+          <SignOut/>
           </Nav>
       </Navbar.Collapse>
      
@@ -35,7 +35,7 @@ const NavBar = () => {
       <div>
           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
      
-     <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+     <Navbar.Brand href="/">ZBooks</Navbar.Brand>
      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
      <Navbar.Collapse id="responsive-navbar-nav">
          <Nav className="me-auto">

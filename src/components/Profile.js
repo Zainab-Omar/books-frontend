@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { Redirect } from "react-router";
 import {deleteBook} from '../actions/deleteBook'
 import { Link } from 'react-router-dom'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
 const Profile = ({users, deleteBook})  => {
 
@@ -11,7 +11,7 @@ const Profile = ({users, deleteBook})  => {
         if (users !== undefined){
             return(
                 <div>
-                <h3>Welcome {users.username}</h3>
+                <h3 className="user-name">Welcome {users.username}</h3>
                
 
                 <h1 className="profile-title">your favorites Books :</h1>
@@ -28,7 +28,7 @@ const Profile = ({users, deleteBook})  => {
                                     </Card.Text>
                                     <a href= {book.buy_link} target="_blank">Buy Link</a>
                                     <p><Link key={book.id} to={`/books/${book.id}`}>Show details</Link></p>
-                                    <button onClick = {() => deleteBook(book)}>delete</button>
+                                    <Button variant="secondary" size="sm" onClick = {() => deleteBook(book)}>delete</Button>
                                     
                                 </Card.Body>
                             </Card>
