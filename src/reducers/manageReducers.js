@@ -58,6 +58,15 @@ function userReducer(state = [], action) {
                     books: state.currentUser.books.filter(book => book.id !== action.book.id)
                 }
             }
+
+            case 'DELETE_COMMENT':
+                return {
+                    ...state,
+                    currentUser: {
+                        ...state.currentUser,
+                        comments: state.currentUser.comments.filter(comment => comment.id !== action.comment.id)
+                    }
+                }
     
         case 'ADD_COMMENT':
             return {
