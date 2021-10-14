@@ -57,6 +57,7 @@
  
 }
 .user-container{
+  margin-top: 20px;
   margin-left: 20px;
   float: left;
 }
@@ -71,6 +72,7 @@
 }
 
 .user-name{
+  color: goldenrod;
   margin-left: 20px;
   margin-top: 10px ;
 }
@@ -137,11 +139,19 @@
   font-size: 1.2em;
 }
 
-.comment-date{
+.comment-text{
+  margin-top: 10px;
   font-weight: bold;
-  font-size: 0.9em;
-  color: coral;
+  color: black;
 }
+.comment-date{
+  font-size: 0.7em;
+  color: blue;
+}
+.close-btn{
+  margin-right: 5px;
+}
+
 
 .comment-form{
   border-radius: 5px;
@@ -297,4 +307,5 @@
   /* margin-left: 18px; */
 
 }
+
 

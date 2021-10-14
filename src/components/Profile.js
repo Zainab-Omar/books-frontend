@@ -11,7 +11,7 @@ const Profile = ({users, deleteBook})  => {
         if (users !== undefined){
             return(
                 <div>
-                <h3 className="user-name">Welcome {users.username}</h3>
+                <h2 className="user-name">Welcome {users.username}</h2>
                
 
                 <h1 className="profile-title">your favorites Books :</h1>
