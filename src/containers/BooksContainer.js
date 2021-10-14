@@ -7,7 +7,7 @@ import SearchBook from '../components/SearchBook'
 class BooksContainer extends React.Component {
     state = {
         searchTerm: '',
-        sortedBooks: [],
+        sortedBooks: []
     }
 
     componentDidMount(){
@@ -29,10 +29,11 @@ class BooksContainer extends React.Component {
         this.setState({searchTerm: ''})
     }
 
-    sortBooks = () => {
-        const newList = this.props.books.items.map(item => item.volumeInfo).sort((a,b) => (a.title > b.title) ? 1:-1)
-        this.setState({sortedBooks:newList})
-    }
+    // sortBooks = () => {
+    //     const newList = this.props.books.items.map(item => item.volumeInfo).sort((a,b) => (a.title > b.title) ? 1:-1)
+    //     this.setState({sortedBooks: newList})
+    //     console.log(this.state.sortedBooks)
+    // }
 
     render(){
         // let booksArray = this.props.books.items || []

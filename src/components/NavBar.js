@@ -1,10 +1,11 @@
 import React from 'react'
 import SignOut from './SignOut'
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { connect } from 'react-redux'
 
-const NavBar = () => {
+const NavBar = ({users}) => {
 
-  if(localStorage.token !== undefined){
+  if((localStorage.token !== undefined) && (users !== undefined)){
     return(
       <div>
 
@@ -56,6 +57,12 @@ const NavBar = () => {
 
 }
 
+const mapStateToProps = state => {
+  return {
+    users: state.users.currentUser
+  }
+}
+
   
   
-  export default NavBar;
+  export default connect(mapStateToProps)(NavBar);
