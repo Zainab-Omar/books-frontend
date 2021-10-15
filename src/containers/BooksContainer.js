@@ -6,7 +6,7 @@ import Books from '../components/Books'
 class BooksContainer extends React.Component {
     state = {
         searchTerm: '',
-        sortedBooks: []
+        sortedBooks: [],
     }
 
     componentDidMount(){
@@ -28,11 +28,17 @@ class BooksContainer extends React.Component {
         this.setState({searchTerm: ''})
     }
 
-    // sortBooks = () => {
-    //     const newList = this.props.books.items.map(item => item.volumeInfo).sort((a,b) => (a.title > b.title) ? 1:-1)
-    //     this.setState({sortedBooks: newList})
-    //     console.log(this.state.sortedBooks)
-    // }
+    sortBooks = () => {
+        const newList = this.props.books.items.map(item => item.volumeInfo).sort((a,b) => (a.title > b.title) ? 1:-1)
+        this.setState({sortedBooks: newList})
+        console.log(this.state.sortedBooks)
+    }
+
+    unsortBooks = () => {
+        const booksArray = this.props.books.items|| []
+        const newList = booksArray.map(item => item.volumeInfo)
+        return newList
+    }
 
     render(){
         return(
@@ -45,7 +51,7 @@ class BooksContainer extends React.Component {
                 </form>
 
                 <button onClick={this.sortBooks}>Sort A-Z</button>
-                <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.props.books.items}/>
+                <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.unsortBooks()}/>
             </div>
         )
     }
