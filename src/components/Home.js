@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 const Home = () => {
     return(
         <div className="home-page">
-            <h1 className="home-title">Welcome to Zbooks App</h1>
-            <h6 className="home-content">Here you can search for your favorite books, and adding them to your collection</h6>
+            <h1 className="home-title">Welcome to ZBooks App</h1>
+            <h3 className="home-content">ZBooks application is designed to enable users to search for thier favorite books. Users can create an account to access other functionalities
+             like add/remove books to thier collection add/remove notes. </h3>
 
             <Link to="/books">
              <p className="home-link">See Books</p>

@@ -4,7 +4,7 @@
   
 }
 .home-title{
-  text-align: left;
+  text-align: center;
   font-style: oblique;
   font-family: "Trattatello, fantasy";
   font-weight: bold;
@@ -12,12 +12,14 @@
 }
 
 .home-content{
-  font-size: 1.5em;
-  text-align: left;
+  text-align: center;
   color: black;
-  margin-left: 30px;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
   padding-bottom: 30px;
-  font-family: "cursive"
+  font-style: oblique;
+  font-family: "Trattatello, fantasy";
 }
 
 .home-link{
