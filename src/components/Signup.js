@@ -21,16 +21,17 @@ class Signup extends Component{
     handleSubmit = event => {
         event.preventDefault()
         this.props.newUserFetch(this.state)
-        this.props.history.push("./books")
+        // this.props.history.push("./books")
     }
 
     render(){
        if (localStorage.token === undefined){
         return(
             <div className="signup-form">
-            <form onSubmit={this.handleSubmit}>
                 <h1>Signup !</h1>
-
+            <form onSubmit={this.handleSubmit}>
+                
+                {this.props.users.error?this.props.users.error.map(error=><p className="signup-errors">{error}</p>):null}
                 <FormGroup>
 
                 <label>username: </label>
@@ -58,17 +59,23 @@ class Signup extends Component{
     }
     else return (
         <div>
-            <h4 className="signup-alart">You are signed in to create new account signout first</h4>
+             {this.props.history.push("./books")}
+            {/* <h4 className="signup-alart">You are signed in to create new account signout first</h4> */}
         </div>
     )
 }
 }
 
+const mapStateToProps = state => {
+    return {
+        users: state.users
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
     newUserFetch: userInfo => dispatch(newUserFetch(userInfo))
   })
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 
 

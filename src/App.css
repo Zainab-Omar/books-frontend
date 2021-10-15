@@ -40,7 +40,10 @@
   
 }
 
-.signin-error{
+.signin-error {
+  color: red;
+}
+.signup-errors{
   color: red;
 }
 
