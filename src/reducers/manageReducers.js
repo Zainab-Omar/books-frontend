@@ -11,34 +11,22 @@ function bookReducer(state = [], action) {
     switch (action.type){
         case 'FETCH_BOOKS':
             return  action.books
-
-        case 'LIKE_BOOK':
-            return state.map(book => {
-                if (book.id === action.book.id) {
-                    return action.book
-                }
-                else
-                return book
-            })
-
         default:
             return state
 
     }
 }
 
-
 function userReducer(state = [], action) {
     switch (action.type) {
         case 'LOGIN_USER':
           return {...state, currentUser: action.userObj}
         
-
         case 'SIGNOUT_USER': 
            return {...state, currentUser: {}}
 
         case 'ERROR_MESSAGE':
-            return {...state, currentUser: action.error}
+            return {...state, error: action.error}
 
         case 'ADD_BOOK':
             return {
@@ -48,8 +36,7 @@ function userReducer(state = [], action) {
                     books: state.currentUser.books.concat(action.book)
                 }
             }
-          
-        
+
         case 'DELETE_BOOK':
             return {
                 ...state,
@@ -58,6 +45,15 @@ function userReducer(state = [], action) {
                     books: state.currentUser.books.filter(book => book.id !== action.book.id)
                 }
             }
+
+        case 'DELETE_COMMENT':
+            return {
+                ...state,
+                    currentUser: {
+                        ...state.currentUser,
+                        comments: state.currentUser.comments.filter(comment => comment.id !== action.comment.id)
+                    }
+                }
     
         case 'ADD_COMMENT':
             return {

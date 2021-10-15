@@ -37,6 +37,4 @@ class CommentInput extends React.Component {
         )
     }
 }
-
-
 export default connect(null, {createComment})(CommentInput)

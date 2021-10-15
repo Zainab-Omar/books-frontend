@@ -1,41 +1,65 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
 import SignOut from './SignOut'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { connect } from 'react-redux'
 
-const NavBar = () => {
+const NavBar = ({users}) => {
+
+  if((localStorage.token !== undefined) && (users !== undefined)){
     return(
-    <div className="navbar-component" style={{ background: 'maroon', paddingTop: '12px', paddingBottom: '5px' }}>
-           
-    <NavLink to="/" className="navbar-logo" >
-        Zbooks
-    </NavLink>
+      <div>
 
-    <NavLink to="/" style={link} className="navbar-link">Home</NavLink>
-    <NavLink to="/books" style={link} className="navbar-link">Books</NavLink>
-    <NavLink to="/about" style={link} className="navbar-link">About</NavLink>
-
-    <DropdownButton
-      title="Menu"
-      className="dropdown-button"
-      id="dropdown-menu-align-right"
-     >
-       <Dropdown.Item eventKey="profile"><NavLink to="/profile" style={link} className="navbar-link">profile</NavLink></Dropdown.Item> 
-       <Dropdown.Item eventKey="signup"><NavLink to="/signup" style={link} className="navbar-link">Signup</NavLink></Dropdown.Item>
-       <Dropdown.Item eventKey="signin"><NavLink to="/signin" style={link} className="navbar-link">Signin</NavLink></Dropdown.Item>
-       <Dropdown.Item eventKey="signout"><SignOut /></Dropdown.Item> 
-    </DropdownButton>
-    </div>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+     
+      <Navbar.Brand href="/">ZBooks</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+          <Nav.Link href="/books">Books</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
+        
+          </Nav>
+          <Nav>
+          <Nav.Link href="/profile">Profile</Nav.Link>
+          <SignOut/>
+          </Nav>
+      </Navbar.Collapse>
+     
+      </Navbar>
+      
+  </div>
+   
     )
-}
-const link = {
-    width: '100px',
-    padding: '15px',
-    margin: '0 8px 8px',
-    textDecoration: 'none',
-    color: 'black',
   }
-  
-  
-  export default NavBar;
+  else{
+    return(
+      <div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+     
+         <Navbar.Brand href="/">ZBooks</Navbar.Brand>
+         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+         <Navbar.Collapse id="responsive-navbar-nav">
+         <Nav className="me-auto">
+         <Nav.Link href="/books">Books</Nav.Link>
+         <Nav.Link href="/about">About</Nav.Link>
+       
+         </Nav>
+         <Nav>
+         <Nav.Link href="/signin">Signin</Nav.Link>
+         <Nav.Link href="/signup">Signup</Nav.Link>
+         </Nav>
+     </Navbar.Collapse>
+    
+     </Navbar>
+      </div>
+    )
+  }
+
+}
+
+const mapStateToProps = state => {
+  return {
+    users: state.users.currentUser
+  }
+}
+export default connect(mapStateToProps)(NavBar);

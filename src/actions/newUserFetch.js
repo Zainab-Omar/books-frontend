@@ -10,7 +10,9 @@ export const newUserFetch = user => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.error){}
+            if(data.message){
+                dispatch(handleError(data.message))
+            }
             else {
                 localStorage.setItem("token", data.jwt)
                 dispatch(loginUser(data.user))
@@ -22,4 +24,9 @@ export const newUserFetch = user => {
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
     userObj
+})
+
+const handleError = error => ({
+    type: 'ERROR_MESSAGE',
+    error
 })

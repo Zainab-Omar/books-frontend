@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -43,8 +44,6 @@ class App extends React.Component {
     )
   }
 }
-
-
 const mapDispatchToProps = dispatch => ({
   fetchProfile: () => dispatch(fetchProfile())
 })

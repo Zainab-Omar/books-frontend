@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {userSignin} from '../actions/userSignin'
-import { FormControl, FormGroup } from 'react-bootstrap';
+import { FormControl, FormGroup, Alerts } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
 
@@ -11,7 +11,6 @@ class Signin extends React.Component {
         password: '',
     }
    
-  
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -21,28 +20,15 @@ class Signin extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.userSignin(this.state)
-        
-        this.props.history.push("./books")
-        
+        this.setState({email:"", password:""})
     }
-
-    // renderAlert() {
-    //     if (this.props.errors) {
-    //       return (
-    //         <div>
-    //           <strong>Oops!</strong> {this.props.errors}
-    //         </div>
-    //       );
-    //     }
-    //   }
 
     render(){
         if (localStorage.token === undefined){
         return(
-            
             <div className="signin-form">
-                <h1>Sign In !</h1>
-                
+                  <h1>Sign In !</h1>
+                {this.props.users.error? <p className="signin-error">{this.props.users.error}</p>:null}   
             <form onSubmit={this.handleSubmit}>
                 <FormGroup>
 
@@ -63,28 +49,23 @@ class Signin extends React.Component {
         )
     }
     else return(
-        <div className="signin-alart">
-            <h3>You already Signed in
-            <Link to="/profile">
-             <p>view your profile </p>
-            </Link>
-            </h3>
+        <div>
+            {this.props.history.push("./books")}
         </div>
-    )
-    
+    )  
   }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         errors: state.users.currentUser
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        users: state.users
+    }
+}
 const mapDispatchToProps = dispatch => ({
     userSignin: userInfo => dispatch(userSignin(userInfo))
 })
 
-export default connect(null, mapDispatchToProps)(Signin);
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);
 
 
                

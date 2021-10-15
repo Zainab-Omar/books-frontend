@@ -40,6 +40,13 @@
   
 }
 
+.signin-error {
+  color: red;
+}
+.signup-errors{
+  color: red;
+}
+
 .book-content{
   width: 306px;
   height: 600px;
@@ -57,7 +64,9 @@
  
 }
 .user-container{
+  margin-top: 20px;
   margin-left: 20px;
+  float: left;
 }
 .user-content{
   width: 306px;
@@ -67,6 +76,12 @@
   text-align: center;
   font-family: "Trattatello, fantasy";
   color: black;
+}
+
+.user-name{
+  color: goldenrod;
+  margin-left: 20px;
+  margin-top: 10px ;
 }
 
 .profile-title{
@@ -131,11 +146,19 @@
   font-size: 1.2em;
 }
 
-.comment-date{
+.comment-text{
+  margin-top: 10px;
   font-weight: bold;
-  font-size: 0.9em;
-  color: coral;
+  color: black;
 }
+.comment-date{
+  font-size: 0.7em;
+  color: blue;
+}
+.close-btn{
+  margin-right: 5px;
+}
+
 
 .comment-form{
   border-radius: 5px;
@@ -156,6 +179,10 @@
   content: "";
   display: table;
   clear: both;
+}
+.image-size{
+  width: 400px;
+  height: 300px;
 }
 
 /* .comment-form input[type=text], select {
@@ -278,14 +305,14 @@
 .signout-button{
   border: none;
   font-weight: bold;
-  font-family: 'cursive';
   color:black;
-  font-size: 22px;
+  /* font-size: 22px; */
   text-decoration: none;
   cursor: pointer;
   background-color: white;
   text-align: center;
-  margin-left: 18px;
+  /* margin-left: 18px; */
 
 }
+
 

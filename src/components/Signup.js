@@ -9,8 +9,7 @@ class Signup extends Component{
         username: "",
         email: "",
         password: "",
-        avatar: "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_640.png",
-        bio: ""
+        password_confirmation:""
     }
 
     handleChange = event => {
@@ -22,16 +21,16 @@ class Signup extends Component{
     handleSubmit = event => {
         event.preventDefault()
         this.props.newUserFetch(this.state)
-        this.props.history.push("./books")
     }
 
     render(){
        if (localStorage.token === undefined){
         return(
             <div className="signup-form">
+            <h1>Signup !</h1>
             <form onSubmit={this.handleSubmit}>
-                <h1>Signup !</h1>
-
+                
+                {this.props.users.error?this.props.users.error.map(error=><p className="signup-errors">{error}</p>):null}
                 <FormGroup>
 
                 <label>username: </label>
@@ -42,16 +41,10 @@ class Signup extends Component{
 
                 <label>password: </label>
                 <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange} required/><br/>
-
-                <h6 style={{color:"rgb(0 123 255)"}}>Optional</h6>
-
-                <label>Use default avatar or add yours: </label>
-                <FormControl input type="text" name="avatar" value={this.state.avatar} onChange={this.handleChange} />
-              
-
-                <label>bio: </label>
-                <FormControl textarea name="bio" value={this.state.bio} onChange={this.handleChange}/>
-                <br/>
+                
+                <label>password confirmation: </label>
+                <FormControl input type="password" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} required/><br/>
+                
                 <button className="btn btn-primary" type="submit">Sign Up</button>
 
                 </FormGroup>
@@ -65,17 +58,22 @@ class Signup extends Component{
     }
     else return (
         <div>
-            <h4 className="signup-alart">You are signed in to create new account signout first</h4>
+             {this.props.history.push("./books")}
         </div>
     )
 }
 }
 
+const mapStateToProps = state => {
+    return {
+        users: state.users
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
     newUserFetch: userInfo => dispatch(newUserFetch(userInfo))
   })
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 
 

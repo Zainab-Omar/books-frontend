@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { Redirect } from "react-router";
 import {deleteBook} from '../actions/deleteBook'
 import { Link } from 'react-router-dom'
-
+import { Card, Button } from 'react-bootstrap'
 
 const Profile = ({users, deleteBook})  => {
 
@@ -11,30 +11,25 @@ const Profile = ({users, deleteBook})  => {
         if (users !== undefined){
             return(
                 <div>
-               <img className="profile-photo" src={users.avatar} alt="picture" width="200"  height="200" />  
-               <div className="name-bio">
-                <h3>Welcome {users.username}</h3>
-                <h5>{users.bio}</h5>
-                </div>
-
+                <h2 className="user-name">Welcome {users.username}</h2>
                 <h1 className="profile-title">your favorites Books :</h1>
                 {users.books.map(book => {
                     return(
                         <div className="user-container">
-                            <div className="user-books">
-                                <div className="user-content">
-                          <img src={book.img_url} width="300" height="400" alt="book image" />
-                          
-                          <p>Title: {book.title}</p>
-                          <p>Authors: {book.authors.map(author => author)}</p>
-                          <p>published Date: {book.published_date}</p>
-                          <a href= {book.buy_link} target="_blank">Buy Link</a><br/>
-                          <p><Link key={book.id} to={`/books/${book.id}`}>Show details</Link></p>
-                          <button onClick = {() => deleteBook(book)}>delete</button>
-                          </div>
-                          </div>
-                        </div>
-                    
+                              <Card style={{ width: '18rem', height: '560px' }}>
+                                <Card.Img className="image-size" variant="top" src={book.img_url} />
+                                <Card.Body>
+                                    <Card.Title>Title: {book.title}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Authors: {book.authors.map(author => author)}</Card.Subtitle>
+                                    <Card.Text>
+                                     published Date: {book.published_date}
+                                    </Card.Text>
+                                    <a href= {book.buy_link} target="_blank">Buy Link</a>
+                                    <p><Link key={book.id} to={`/books/${book.id}`}>Show details</Link></p>
+                                    <Button variant="secondary" size="sm" onClick = {() => deleteBook(book)}>delete</Button>  
+                                </Card.Body>
+                            </Card>
+                        </div>    
             )})}
 
                 </div>
@@ -43,9 +38,7 @@ const Profile = ({users, deleteBook})  => {
         else return null
     }
     else return (
-        
             <Redirect to="/signin" />  
-    
     ) 
 }
 
@@ -56,6 +49,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { deleteBook })(Profile);
-
-
-
