@@ -40,6 +40,10 @@
   
 }
 
+.signin-error{
+  color: red;
+}
+
 .book-content{
   width: 306px;
   height: 600px;

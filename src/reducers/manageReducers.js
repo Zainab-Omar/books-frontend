@@ -38,7 +38,7 @@ function userReducer(state = [], action) {
            return {...state, currentUser: {}}
 
         case 'ERROR_MESSAGE':
-            return {...state, currentUser: action.error}
+            return {...state, error: action.error}
 
         case 'ADD_BOOK':
             return {

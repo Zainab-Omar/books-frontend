@@ -56,7 +56,7 @@ class BooksContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        books: state.books
+        books: state.books,
     }
 }
 
