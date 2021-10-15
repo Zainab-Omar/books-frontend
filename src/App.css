@@ -30,7 +30,7 @@
 }
 
 .books-container{
-  margin-left: 20px;
+  margin-left: 50px;
 
 }
 
@@ -187,79 +187,6 @@
   height: 300px;
 }
 
-/* .comment-form input[type=text], select {
-  width: 100%;
-  padding: 12px 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  
-} */
-/* 
-.comment-form input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.add-book input[type=submit]:hover {
-  background-color: #45a049;
-} */
-
-
-/*  */
-
-/* .add-book{
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin-left: 25%;
-  margin-right:25%;
-  margin-top: 10%;
-  width: 50%;
-} */
-/* .add-book input[type=text], select {
-  width: 100%;
-  padding: 12px 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  
-} */
-/* 
-.add-book input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-/* .add-book input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-
-.book-name{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  overflow-wrap: break-word;
-  font-weight: bold;
-  color: #0c3d59;
-}  */
 
 .signin-form, .signup-form{
   border: 1px solid rgb(128, 128, 128);
