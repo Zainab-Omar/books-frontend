@@ -12,8 +12,6 @@ const Profile = ({users, deleteBook})  => {
             return(
                 <div>
                 <h2 className="user-name">Welcome {users.username}</h2>
-               
-
                 <h1 className="profile-title">your favorites Books :</h1>
                 {users.books.map(book => {
                     return(
@@ -28,14 +26,10 @@ const Profile = ({users, deleteBook})  => {
                                     </Card.Text>
                                     <a href= {book.buy_link} target="_blank">Buy Link</a>
                                     <p><Link key={book.id} to={`/books/${book.id}`}>Show details</Link></p>
-                                    <Button variant="secondary" size="sm" onClick = {() => deleteBook(book)}>delete</Button>
-                                    
+                                    <Button variant="secondary" size="sm" onClick = {() => deleteBook(book)}>delete</Button>  
                                 </Card.Body>
                             </Card>
-
-                      
-                        </div>
-                    
+                        </div>    
             )})}
 
                 </div>
@@ -44,9 +38,7 @@ const Profile = ({users, deleteBook})  => {
         else return null
     }
     else return (
-        
             <Redirect to="/signin" />  
-    
     ) 
 }
 
@@ -57,20 +49,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { deleteBook })(Profile);
-
-
-
-// <div className="user-container">
-// <div className="user-books">
-//     <div className="user-content">
-// <img src={book.img_url} width="300" height="400" alt="book image" />
-
-// <p>Title: {book.title}</p>
-// <p>Authors: {book.authors.map(author => author)}</p>
-// <p>published Date: {book.published_date}</p>
-// <a href= {book.buy_link} target="_blank">Buy Link</a><br/>
-// <p><Link key={book.id} to={`/books/${book.id}`}>Show details</Link></p>
-// <button onClick = {() => deleteBook(book)}>delete</button>
-// </div>
-// </div>
-// </div>

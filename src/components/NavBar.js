@@ -34,11 +34,11 @@ const NavBar = ({users}) => {
   else{
     return(
       <div>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
      
-     <Navbar.Brand href="/">ZBooks</Navbar.Brand>
-     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-     <Navbar.Collapse id="responsive-navbar-nav">
+         <Navbar.Brand href="/">ZBooks</Navbar.Brand>
+         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+         <Navbar.Collapse id="responsive-navbar-nav">
          <Nav className="me-auto">
          <Nav.Link href="/books">Books</Nav.Link>
          <Nav.Link href="/about">About</Nav.Link>
@@ -62,7 +62,4 @@ const mapStateToProps = state => {
     users: state.users.currentUser
   }
 }
-
-  
-  
-  export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps)(NavBar);

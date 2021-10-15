@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchBooks } from '../actions/fetchBooks'
 import Books from '../components/Books'
-import SearchBook from '../components/SearchBook'
 
 class BooksContainer extends React.Component {
     state = {
@@ -36,8 +35,6 @@ class BooksContainer extends React.Component {
     // }
 
     render(){
-        // let booksArray = this.props.books.items || []
-        // let books = booksArray.map(item => item.volumeInfo)
         return(
             <div className="books-container">
                 <br />
@@ -46,7 +43,7 @@ class BooksContainer extends React.Component {
                     <input type="text" name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
                     <input type="submit" />
                 </form>
-                <br />
+
                 <button onClick={this.sortBooks}>Sort A-Z</button>
                 <Books books = {this.state.sortedBooks.length > 0 ? this.state.sortedBooks : this.props.books.items}/>
             </div>

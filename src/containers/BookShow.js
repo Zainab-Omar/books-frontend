@@ -41,13 +41,9 @@ class BookShow extends React.Component {
         )
     }
     else return (
-        
-        <Redirect to="/signin" />  
-
-)
+         <Redirect to="/signin" />
+         )
     }
-
-
 }
 
 const mapStateToProps = (state) => {

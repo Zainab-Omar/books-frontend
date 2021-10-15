@@ -21,11 +21,8 @@ class SaveBook extends React.Component {
         
         return(
             <Button variant="link" onClick={this.handleClick}>add to favorites</Button>
-            // <button onClick={this.handleClick}>add to favorites</button>
         )
     }
-
-
 }
 
 export default connect (null, {addBook})(SaveBook)

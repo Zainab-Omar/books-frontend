@@ -15,11 +15,8 @@ class SignOut extends React.Component{
     render(){
         return(
         <Button className="signout-button" variant="link" onClick={this.handleClick}>SignOut</Button>
-        //   <button className="signout-button" onClick={this.handleClick} >SignOut</button>
         )
-    }
-   
-
+    }  
 }
 
 const mapStateToProps = state => ({

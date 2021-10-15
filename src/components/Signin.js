@@ -11,7 +11,6 @@ class Signin extends React.Component {
         password: '',
     }
    
-  
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -22,19 +21,14 @@ class Signin extends React.Component {
         event.preventDefault()
         this.props.userSignin(this.state)
         this.setState({email:"", password:""})
-        // this.props.history.push("./books")
     }
 
     render(){
-        // if(this.props.users.error){
-        //     this.props.history.push("/signin")
-        // }
         if (localStorage.token === undefined){
         return(
             <div className="signin-form">
-                {this.props.users.error? <p className="signin-error">{this.props.users.error}</p>:null}
-                <h1>Sign In !</h1>
-                
+                  <h1>Sign In !</h1>
+                {this.props.users.error? <p className="signin-error">{this.props.users.error}</p>:null}   
             <form onSubmit={this.handleSubmit}>
                 <FormGroup>
 
@@ -55,16 +49,10 @@ class Signin extends React.Component {
         )
     }
     else return(
-        <div className="signin-alart">
-             {this.props.history.push("./books")}
-            {/* <h3>You already Signed in
-            <Link to="/profile">
-             <p>view your profile </p>
-            </Link>
-            </h3> */}
+        <div>
+            {this.props.history.push("./books")}
         </div>
-    )
-    
+    )  
   }
 }
 
