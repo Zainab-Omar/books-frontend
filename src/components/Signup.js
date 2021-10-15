@@ -9,6 +9,7 @@ class Signup extends Component{
         username: "",
         email: "",
         password: "",
+        password_confirmation:""
     }
 
     handleChange = event => {
@@ -40,8 +41,10 @@ class Signup extends Component{
 
                 <label>password: </label>
                 <FormControl input type="password" name="password" value={this.state.password} onChange={this.handleChange} required/><br/>
-
-    
+                
+                <label>password confirmation: </label>
+                <FormControl input type="password" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} required/><br/>
+                
                 <button className="btn btn-primary" type="submit">Sign Up</button>
 
                 </FormGroup>
