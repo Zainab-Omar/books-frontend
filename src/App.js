@@ -6,7 +6,6 @@ import NavBar from './components/NavBar';
 import BooksContainer from './containers/BooksContainer'
 import BookShow from './containers/BookShow'
 import Home from './components/Home'
-import About from './components/About'
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import {fetchProfile} from './actions/fetchProfile'
@@ -29,7 +28,6 @@ class App extends React.Component {
         <div className="App">
         <NavBar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
           <Route exact path="/books" component={BooksContainer} />
           <Route exact path="/books/:bookId" component={BookShow} />
           <Route exact path="/signup" component={Signup} />
