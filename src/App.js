@@ -12,7 +12,7 @@ import {fetchProfile} from './actions/fetchProfile'
 import SignOut from './components/SignOut'
 import {connect} from 'react-redux'
 import Profile from './components/Profile'
-
+require('dotenv').config()
 
 class App extends React.Component {
 
