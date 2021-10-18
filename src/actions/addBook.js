@@ -1,6 +1,6 @@
 export const addBook = (data) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/books', {
+        fetch('https://zbooks-api.herokuapp.com/api/v1/books', {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

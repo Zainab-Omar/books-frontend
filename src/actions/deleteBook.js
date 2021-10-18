@@ -1,6 +1,6 @@
 export const deleteBook = (book) => {
     return(dispatch) => {
-        return fetch(`http://localhost:3000/api/v1/books/${book.id}`, {
+        return fetch(`https://zbooks-api.herokuapp.com/api/v1/books/${book.id}`, {
             method: 'Delete'
         })
         .then(res => res.json())

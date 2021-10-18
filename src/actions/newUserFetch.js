@@ -1,6 +1,6 @@
 export const newUserFetch = user => {
     return dispatch => {
-       return fetch("http://localhost:3000/api/v1/users", {
+       return fetch("https://zbooks-api.herokuapp.com/api/v1/users", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

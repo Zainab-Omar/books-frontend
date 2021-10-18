@@ -1,6 +1,6 @@
 export const editBook = (data) => {
     return(dispatch) => {
-        fetch(`http://localhost:3000/api/v1/books/${data.id}`, {
+        fetch(`https://zbooks-api.herokuapp.com/api/v1/books/${data.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

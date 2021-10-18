@@ -2,7 +2,7 @@
 import Signin from '../components/Signin'
 export const userSignin = user => {
     return dispatch => {
-        return fetch("http://localhost:3000/api/v1/auth", {
+        return fetch("https://zbooks-api.herokuapp.com/api/v1/auth", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

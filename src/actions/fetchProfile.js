@@ -2,7 +2,7 @@ export const fetchProfile = () => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://localhost:3000/api/v1/profile", {
+      return fetch("https://zbooks-api.herokuapp.com/api/v1/profile", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
